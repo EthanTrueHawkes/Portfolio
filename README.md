@@ -2,6 +2,8 @@
 
 # BYU **Web Programming** `cs260`
 
+Testing
+
 ![cover](instruction/webprogrammingcover.jpg)
 
 Welcome to Web Programming 260. By the end of this instruction you will:
