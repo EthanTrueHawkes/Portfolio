@@ -71,14 +71,14 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [x] **HTML pages** - I created four html pages. A log in page, a projects page, an about me page, and a resume page.
-- [ ] **Proper HTML element usage** - I did not complete this part of the deliverable.
+- [x] **Proper HTML element usage** - I attempted to use the best HTML elements for each item, using images, forms, divs, sections, radio buttons, etc. to properly structure HTML content.
 - [x] **Links** - I added links to each of the html pages and my github repository.
 - [x] **Text** - I added meaningful and accurate text to each page and as placeholders for my other deliverables.
-- [ ] **3rd party API placeholder** - I did not complete this part of the deliverable.
-- [ ] **Images** - I did not complete this part of the deliverable.
-- [ ] **Login placeholder** - I did not complete this part of the deliverable.
-- [ ] **DB data placeholder** - I did not complete this part of the deliverable.
-- [ ] **WebSocket placeholder** - I did not complete this part of the deliverable.
+- [x] **3rd party API placeholder** - Added a placeholder in about.html for my GitHub commits that will be grabbed from 3rd party api
+- [x] **Images** - I added an image for my Github commits and my Outbound Project.
+- [x] **Login placeholder** - Created the log in page. Similar to Simon.
+- [x] **DB data placeholder** - Created the preferences button in header of Resume.thml (to not clutter each page) and placeholder for preferences to be logged in database.
+- [x] **WebSocket placeholder** - Added a placeholder button for messages and what the aside / div will look like on Resume.html (to not clutter each page).
 
 ## 🚀 CSS deliverable
 
