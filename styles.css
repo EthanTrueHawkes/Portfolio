@@ -2,6 +2,10 @@
     font-family: "proxima-nova", sans-serif
 }
 
+p {
+    color: #141414
+}
+
 nav ul {
     display: flex;
     width: 327px;
@@ -9,12 +13,13 @@ nav ul {
     gap: 51px;
     list-style: none;
     align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
 
     position: fixed;
-    top: 1.5rem;
-    right: 1.5rem;
+    top: 2rem;
+    right: 9rem;
 
     border-radius: 360px;
     background: #F2F2F8;
@@ -23,4 +28,20 @@ nav ul {
 nav a {
     text-decoration: none;
     color: #141414;
+    font-weight: 500;
+}
+
+.login-button {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 2rem;
+    right: 5rem;
+
+    border-radius: 360px;
+    background: #F2F2F8;
 }
