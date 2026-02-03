@@ -45,3 +45,16 @@ nav a {
     border-radius: 360px;
     background: #F2F2F8;
 }
+
+.landing-topinterests {
+    display: flex;
+    padding: 40px 32px;
+    flex-direction: column;
+    gap: 40px;
+    width: 369px;
+
+    list-style: none;
+
+    border-radius: 24px;
+    background: #F2F2F8;
+}
