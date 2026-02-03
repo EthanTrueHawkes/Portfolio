@@ -19,3 +19,8 @@ nav ul {
     border-radius: 360px;
     background: #F2F2F8;
 }
+
+nav a {
+    text-decoration: none;
+    color: #141414;
+}
