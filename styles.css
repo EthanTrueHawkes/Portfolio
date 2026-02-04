@@ -1,8 +1,12 @@
 * {
-    font-family: "proxima-nova", sans-serif
+    font-family: "proxima-nova", sans-serif;
 }
 
 p {
+    color: #141414
+}
+
+span {
     color: #141414
 }
 
@@ -46,7 +50,27 @@ nav a {
     background: #F2F2F8;
 }
 
+.page-content {
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 140px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+#hero-column-two {
+    display: flex;
+    margin-inline: auto;
+}
+
 .landing-topinterests {
+    margin-top: 56px;
+}
+
+.landing-topinterests ul{
     display: flex;
     padding: 40px 32px;
     flex-direction: column;
@@ -57,4 +81,14 @@ nav a {
 
     border-radius: 24px;
     background: #F2F2F8;
+}
+
+#landing-floating-seemywork {
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    margin-inline: auto;
+    margin-top: 24px;
+
+    opacity: .3;
 }
