@@ -99,6 +99,7 @@ nav a {
     justify-content: center;
     margin-inline: auto;
     margin-top: 24px;
+    margin-bottom: 40px;
 
     opacity: .3;
 }
@@ -114,7 +115,7 @@ nav a {
     border-radius: 24px;
 }
 .work-container {
-    border-radius: 24px;
+    border-radius: 0 24px 24px 24px;
     padding: 160px 64px;
 
     background: #F2F2F8;
@@ -152,8 +153,21 @@ footer a {
     border: none;
 }
 
-.message-button img {
-    color
+#projects-toggle {
+    display: inline-flex;
+    padding: 17px 45.5px 12px 44.5px;
+    justify-content: center;
+    align-items: center;
+
+    gap: 32px;
+    margin-top: 48px;
+
+    border-radius: 24px 24px 0 0;
+    background: #F2F2F8;
+}
+
+#projects-toggle span {
+    opacity: .6;
 }
 
 /* About Me Section */
