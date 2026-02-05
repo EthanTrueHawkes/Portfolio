@@ -136,6 +136,26 @@ footer a {
     text-decoration: none;
 }
 
+.message-button {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+
+    position: fixed;
+    right: 5rem;
+    bottom: 2rem;
+
+    border-radius: 360px;
+    background: #F2F2F8;
+    color: #7C6DFF;
+    border: none;
+}
+
+.message-button img {
+    color
+}
+
 /* About Me Section */
 
 .about-page {
