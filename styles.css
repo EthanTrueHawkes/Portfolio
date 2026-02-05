@@ -119,3 +119,19 @@ nav a {
 
     background: #F2F2F8;
 }
+
+footer {
+    margin-top: 160px;
+    padding: 80px;
+    background: #F2F2F8;
+}
+
+footer p {
+    font-size: 14px;
+    opacity: .5;
+}
+
+footer a {
+    font-size: 14px;
+    text-decoration: none;
+}
