@@ -188,8 +188,14 @@ footer a {
     gap: 32px;
 }
 
-.about-contentbox p {
+.textbox {
+    display: flex;
+    flex-direction: column;
     gap: 32px;
+}
+
+.textbox p {
+    opacity: .8;
 }
 
 #github-repo img {
