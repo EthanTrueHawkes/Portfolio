@@ -84,12 +84,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Visually appealing colors and layout. No overflowing elements.** - I did not complete this part of the deliverable.
-- [ ] **Use of a CSS framework** - I did not complete this part of the deliverable.
-- [ ] **All visual elements styled using CSS** - I did not complete this part of the deliverable.
-- [ ] **Responsive to window resizing using flexbox and/or grid display** - I did not complete this part of the deliverable.
-- [ ] **Use of a imported font** - I did not complete this part of the deliverable.
-- [ ] **Use of different types of selectors including element, class, ID, and pseudo selectors** - I did not complete this part of the deliverable.
+- [x] **Visually appealing colors and layout. No overflowing elements.** - Colors and layouts are done in a designed fashion.
+- [ ] **Use of a CSS framework** - I do not think that I understood this deliverable fully, apologies.
+- [x] **All visual elements styled using CSS** - All visual elemnts except the message board and dark/light mode have been styled. I am somewhat waiting for Javascript for these since they only appear on button click / hover.
+- [x] **Responsive to window resizing using flexbox and/or grid display** - Many elements are responsive to page resizing using flexboxs. Login page is probably most complete in this regard.
+- [x] **Use of a imported font** - Proxima Nova is used from Adobe Fonts.
+- [x] **Use of different types of selectors including element, class, ID, and pseudo selectors** - I use element, class, ID, and one Pseduo selector in css.
 
 ## 🚀 React part 1: Routing deliverable
 
