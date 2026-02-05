@@ -135,3 +135,28 @@ footer a {
     font-size: 14px;
     text-decoration: none;
 }
+
+/* About Me Section */
+
+.about-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.about-contentbox {
+    width: 720px;
+    background: #F2F2F8;
+    border-radius: 24px;
+    padding: 40px;
+}
+
+#github-repo img {
+    width: 614px;
+    border-radius: 8px;
+}
+
+#truehawkes-logo img {
+    width: 350px;
+    margin: 138px;
+}
