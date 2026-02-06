@@ -1,0 +1,11 @@
+# OS junk
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Env files
+.env
+
+# Build output
+dist/
