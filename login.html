@@ -1,62 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <!--This seciton is primarily for the browser to know how to render, and titling the page-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login-styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/vhu5tvf.css" />
+    <title>True Hawkes Portfolio</title>
+  </head>
 
-    <head>
-        <!--This seciton is primarily for the browser to know how to render, and titling the page-->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="login-styles.css" />
-        <link rel="stylesheet" href="https://use.typekit.net/vhu5tvf.css">
-        <title>True Hawkes Portfolio</title>
-    </head>
+  <body>
+    <header>
+      <nav>
+        <!-- This is the Navigation elements that will become the upper NAV bar.-->
 
-    <body>
+        <ul>
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <a
+          href="login.html"
+          class="login-button"
+          title="Log in"
+          aria-label="Log in"
+        >
+          <img src="Assets/Icons/Login-person-SVGicon.svg" alt="Log In Icon" />
+        </a>
+      </nav>
+    </header>
+
+    <main class="login-page">
+      <!-- This is the main content of the page in this section.-->
+      <section class="login-section">
         <header>
-            <nav>
-                <!-- This is the Navigation elements that will become the upper NAV bar.-->
-
-                <ul>
-                    <li><a href="index.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-
-                <a href="login.html" class="login-button" title="Log in" aria-label="Log in">
-                    <img src="Assets/Icons/Login-person-SVGicon.svg" alt="Log In Icon">
-                </a>
-
-            </nav>
+          <h1>Log In to True's Portfolio</h1>
+          <p class="title-subtext">Doing so will grant access to locked work</p>
         </header>
 
-        <main class="login-page">
-            <!-- This is the main content of the page in this section.-->
-            <section class="login-section">
-                <header>
-                    <h1>Log In to True's Portfolio</h1>
-                    <p class="title-subtext">Doing so will grant access to locked work</p>
-                </header>
-        
-                <form method="get" action="index.html" class="login-form">
-                    <div class="field-group">
-                        <div class="form-field">
-                            <p class="field-title">Email:</p>
-                            <input type="text" placeholder="johnyappleseed@email.com"/>
-                        </div>
+        <form method="get" action="index.html" class="login-form">
+          <div class="field-group">
+            <div class="form-field">
+              <p class="field-title">Email:</p>
+              <input type="text" placeholder="johnyappleseed@email.com" />
+            </div>
 
-                        <div class="form-field">
-                            <p class="field-title">Password:</p>
-                            <input type="password" placeholder="****"/>
-                        </div>
-                    </div>
+            <div class="form-field">
+              <p class="field-title">Password:</p>
+              <input type="password" placeholder="****" />
+            </div>
+          </div>
 
-                    <div class="button-group">
-                        <button type="submit" class="button-primary">Log in</button>
-                        <button type="submit" class="button-secondary">Create Account</button>
-                    </div>
-                </form>
-            </section>
-        </main>
-    </body>
-
+          <div class="button-group">
+            <button type="submit" class="button-primary">Log in</button>
+            <button type="submit" class="button-secondary">
+              Create Account
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>

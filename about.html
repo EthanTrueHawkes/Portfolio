@@ -1,67 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <!--This seciton is primarily for the browser to know how to render, and titling the page-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/vhu5tvf.css" />
+    <title>True Hawkes Portfolio</title>
+  </head>
 
-    <head>
-        <!--This seciton is primarily for the browser to know how to render, and titling the page-->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="https://use.typekit.net/vhu5tvf.css">
-        <title>True Hawkes Portfolio</title>
-    </head>
+  <body>
+    <header>
+      <nav>
+        <!-- This is the Navigation elements that will become the upper NAV bar.-->
 
-    <body>
-        <header>
-            <nav>
-                <!-- This is the Navigation elements that will become the upper NAV bar.-->
+        <ul>
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
 
-                <ul>
-                    <li><a href="index.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
+        <a
+          href="login.html"
+          class="login-button"
+          title="Log in"
+          aria-label="Log in"
+        >
+          <img src="Assets/Icons/Login-person-SVGicon.svg" alt="Log In Icon" />
+        </a>
+      </nav>
+    </header>
 
-                <a href="login.html" class="login-button" title="Log in" aria-label="Log in">
-                    <img src="Assets/Icons/Login-person-SVGicon.svg" alt="Log In Icon">
-                </a>
+    <main>
+      <!-- This is the main content of the page in this section.-->
+      <section class="about-page">
+        <section id="truehawkes-logo">
+          <img
+            src="Assets/Icons/Nophoto-graphic-SVGicon.svg"
+            alt="True Hawkes Logo"
+          />
+        </section>
 
-            </nav>
-        </header>
+        <section class="about-contentbox">
+          <header>
+            <h1>About Me</h1>
+          </header>
 
-        <main>
-            <!-- This is the main content of the page in this section.-->
-            <section class="about-page">
-                <section id="truehawkes-logo">
-                    <img src="Assets/Icons/Nophoto-graphic-SVGicon.svg" alt="True Hawkes Logo">
-                </section>
+          <div class="textbox">
+            <p>
+              What I love about UX design is the constant process of
+              learning—about people, about systems, and about how small
+              decisions shape real experiences. I’m especially interested in
+              design systems, interaction design, and user testing because they
+              allow me to think both creatively and analytically. I enjoy
+              iterating on ideas, validating them with users, and refining
+              details until the experience feels intuitive and intentional. For
+              me, good UX isn’t just about how something looks or works—it’s
+              about how clearly it communicates and how well it supports the
+              people using it.
+            </p>
+            <p>
+              I also have a side passion for coding and learning more about the
+              implementation of design. See the history of my GitHub commits for
+              building this website below.
+            </p>
+          </div>
 
-                <section class="about-contentbox">
-                    <header>
-                        <h1>About Me</h1>
-                    </header>
-                    
-                    <div class="textbox">
-                        <p>What I love about UX design is the constant process of learning—about people, about systems, and about how small decisions shape real experiences. I’m especially interested in design systems, interaction design, and user testing because they allow me to think both creatively and analytically. I enjoy iterating on ideas, validating them with users, and refining details until the experience feels intuitive and intentional. For me, good UX isn’t just about how something looks or works—it’s about how clearly it communicates and how well it supports the people using it.</p>
-                        <p>I also have a side passion for coding and learning more about the implementation of design. See the history of my GitHub commits for building this website below.</p>
-                    </div>
+          <div id="github-repo">
+            <img
+              src="assets/GitHub_Repository_Placeholder.png"
+              alt="Placeholder of GitHub repository."
+            />
+          </div>
+        </section>
 
-                    <div id="github-repo">
-                        <img src="assets/GitHub_Repository_Placeholder.png" alt="Placeholder of GitHub repository.">
-                    </div>
-                </section>
-                
-            <button class="message-button">
-                <img src="Assets/Icons/chat-SVGicon.svg" alt="Message True Hawkes Icon">
-            </button>
-            </section>
-        </main>
+        <button class="message-button">
+          <img
+            src="Assets/Icons/chat-SVGicon.svg"
+            alt="Message True Hawkes Icon"
+          />
+        </button>
+      </section>
+    </main>
 
-        <footer>
-            <!--This is the footer of the page-->
+    <footer>
+      <!--This is the footer of the page-->
 
-            <p>By Ethan Hawkes</p>
-            <a href="https://github.com/EthanTrueHawkes/Portfolio.git">GitHub Repository</a>
-        </footer>
-    </body>
-
+      <p>By Ethan Hawkes</p>
+      <a href="https://github.com/EthanTrueHawkes/Portfolio.git"
+        >GitHub Repository</a
+      >
+    </footer>
+  </body>
 </html>

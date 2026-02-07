@@ -1,73 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+  <head>
+    <!--This seciton is primarily for the browser to know how to render, and titling the page-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/vhu5tvf.css" />
+    <title>True Hawkes Portfolio</title>
+  </head>
 
-    <head>
-        <!--This seciton is primarily for the browser to know how to render, and titling the page-->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="https://use.typekit.net/vhu5tvf.css">
-        <title>True Hawkes Portfolio</title>
-    </head>
+  <body>
+    <header>
+      <h1>True</h1>
+      <nav>
+        <!-- This is the Navigation elements that will become the upper NAV bar.-->
 
-    <body>
-        <header>
-            <h1>True</h1>
-            <nav>
-                <!-- This is the Navigation elements that will become the upper NAV bar.-->
+        <ul>
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
 
-                <ul>
-                    <li><a href="index.html">Projects</a></li>
-                    <li><a href="resume.html">Resume</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
+        <a
+          href="login.html"
+          class="login-button"
+          title="Log in"
+          aria-label="Log in"
+        >
+          <img src="Assets/Icons/Login-person-SVGicon.svg" alt="Log In Icon" />
+        </a>
+      </nav>
+      <button>Preferences</button>
+      <button>User</button>
+      <aside>
+        <form action="#" method="get">
+          <h3>Display Mode</h3>
+          <input type="radio" id="light" name="Browser_Mode" value="Light" />
+          <label for="light">Light</label><br />
+          <input type="radio" id="dark" name="Browser_Mode" value="Dark" />
+          <label for="dark">Dark</label><br />
+          <button type="submit">Select</button>
+        </form>
+      </aside>
+    </header>
 
-                <a href="login.html" class="login-button" title="Log in" aria-label="Log in">
-                    <img src="Assets/Icons/Login-person-SVGicon.svg" alt="Log In Icon">
-                </a>
+    <main>
+      <!-- This is the main content of the page in this section.-->
+      <hr />
 
-            </nav>
-            <button>Preferences</button>
-            <button>User</button>
-            <aside>
-                <form action="#" method="get">
-                    <h3>Display Mode</h3>
-                    <input type="radio" id="light" name="Browser_Mode" value="Light">
-                    <label for="light">Light</label><br>
-                    <input type="radio" id="dark" name="Browser_Mode" value="Dark">
-                    <label for="dark">Dark</label><br>
-                    <button type="submit">Select</button>
-                </form>
-            </aside>
-        </header>
+      <h1>Resume</h1>
 
-        <main>
-            <!-- This is the main content of the page in this section.-->
-            <hr />
-            
-            <h1>Resume</h1>
+      <aside>
+        <h3>Message Panel</h3>
 
-            <aside>
-                <h3>Message Panel</h3>
-                
-                <p>Hey Ethan, I love your work and would love to chat sometime.</p>
-                <form action="#" method="post">
-                    <span>Message:</span>
-                    <input type="text" placeholder="Your message">
-                </form>
-            </aside>
+        <p>Hey Ethan, I love your work and would love to chat sometime.</p>
+        <form action="#" method="post">
+          <span>Message:</span>
+          <input type="text" placeholder="Your message" />
+        </form>
+      </aside>
 
-            <button class="message-button">
-                <img src="Assets/Icons/chat-SVGicon.svg" alt="Message True Hawkes Icon">
-            </button>
-        </main>
+      <button class="message-button">
+        <img
+          src="Assets/Icons/chat-SVGicon.svg"
+          alt="Message True Hawkes Icon"
+        />
+      </button>
+    </main>
 
-        <footer>
-            <!--This is the footer of the page-->
+    <footer>
+      <!--This is the footer of the page-->
 
-            <p>By Ethan Hawkes</p>
-            <a href="https://github.com/EthanTrueHawkes/Portfolio.git">GitHub Repository</a>
-        </footer>
-    </body>
-
+      <p>By Ethan Hawkes</p>
+      <a href="https://github.com/EthanTrueHawkes/Portfolio.git"
+        >GitHub Repository</a
+      >
+    </footer>
+  </body>
 </html>

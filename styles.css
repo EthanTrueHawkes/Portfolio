@@ -1,209 +1,215 @@
 * {
-    font-family: "proxima-nova", sans-serif;
+  font-family: "proxima-nova", sans-serif;
 }
 
 h1 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 p {
-    font-size: 16px;
+  font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 
-    color: #141414;
+  color: #141414;
 }
 
 span {
-    color: #141414
+  color: #141414;
 }
 
 nav ul {
-    display: flex;
-    width: 327px;
-    height: 48px;
-    gap: 51px;
-    list-style: none;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  width: 327px;
+  height: 48px;
+  gap: 51px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 
-    position: fixed;
-    top: 2rem;
-    right: 9rem;
+  position: fixed;
+  top: 2rem;
+  right: 9rem;
 
-    border-radius: 360px;
-    background: #F2F2F8;
+  border-radius: 360px;
+  background: #f2f2f8;
 }
 
 nav a {
-    text-decoration: none;
-    color: #141414;
-    font-weight: 500;
+  text-decoration: none;
+  color: #141414;
+  font-weight: 500;
 }
 
 .login-button {
-    display: flex;
-    width: 48px;
-    height: 48px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
 
-    position: fixed;
-    top: 2rem;
-    right: 5rem;
+  position: fixed;
+  top: 2rem;
+  right: 5rem;
 
-    border-radius: 360px;
-    background: #F2F2F8;
+  border-radius: 360px;
+  background: #f2f2f8;
 }
 
 .page-content {
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-top: 140px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 140px;
 }
 
 .hero {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #hero-column-two {
-    display: flex;
-    margin-inline: auto;
+  display: flex;
+  margin-inline: auto;
 }
 
 .landing-topinterests {
-    margin-top: 56px;
+  margin-top: 56px;
 }
 
-.landing-topinterests ul{
-    display: flex;
-    padding: 40px 32px;
-    flex-direction: column;
-    gap: 40px;
-    width: 369px;
+.landing-topinterests ul {
+  display: flex;
+  padding: 40px 32px;
+  flex-direction: column;
+  gap: 40px;
+  width: 369px;
 
-    list-style: none;
+  list-style: none;
 
-    border-radius: 24px;
-    background: #F2F2F8;
+  border-radius: 24px;
+  background: #f2f2f8;
 }
 
 #landing-floating-seemywork {
-    display: flex;
-    width: 200px;
-    justify-content: center;
-    margin-inline: auto;
-    margin-top: 24px;
-    margin-bottom: 40px;
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  margin-inline: auto;
+  margin-top: 24px;
+  margin-bottom: 40px;
 
-    opacity: .3;
+  opacity: 0.3;
 }
 
 .singular-project {
-    display: flex;
-    gap: 64px;
-    align-items: center;
+  display: flex;
+  gap: 64px;
+  align-items: center;
 }
 
 .singular-project img {
-    width: 50vw;
-    border-radius: 24px;
+  width: 50vw;
+  border-radius: 24px;
 }
 .work-container {
-    border-radius: 0 24px 24px 24px;
-    padding: 160px 64px;
+  border-radius: 0 24px 24px 24px;
+  padding: 160px 64px;
 
-    background: #F2F2F8;
+  background: #f2f2f8;
 }
 
 footer {
-    margin-top: 160px;
-    padding: 80px;
-    background: #F2F2F8;
+  margin-top: 160px;
+  padding: 80px;
+  background: #f2f2f8;
 }
 
 footer p {
-    font-size: 14px;
-    opacity: .5;
+  font-size: 14px;
+  opacity: 0.5;
 }
 
 footer a {
-    font-size: 14px;
-    text-decoration: none;
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .message-button {
-    display: flex;
-    width: 48px;
-    height: 48px;
-    padding: 8px;
+  display: flex;
+  width: 48px;
+  height: 48px;
+  padding: 8px;
 
-    position: fixed;
-    right: 5rem;
-    bottom: 2rem;
+  position: fixed;
+  right: 5rem;
+  bottom: 2rem;
 
-    border-radius: 360px;
-    background: #F2F2F8;
-    color: #7C6DFF;
-    border: none;
+  border-radius: 360px;
+  background: #f2f2f8;
+  color: #7c6dff;
+  border: none;
 }
 
 #projects-toggle {
-    display: inline-flex;
-    padding: 17px 45.5px 12px 44.5px;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  padding: 17px 45.5px 12px 44.5px;
+  justify-content: center;
+  align-items: center;
 
-    gap: 32px;
-    margin-top: 48px;
+  gap: 32px;
+  margin-top: 48px;
 
-    border-radius: 24px 24px 0 0;
-    background: #F2F2F8;
+  border-radius: 24px 24px 0 0;
+  background: #f2f2f8;
 }
 
 #projects-toggle span {
-    opacity: .6;
+  opacity: 0.6;
 }
 
 /* About Me Section */
 
 .about-page {
-    display: flex;
-    justify-content: center;
-    margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
 }
 
 .about-contentbox {
-    display: flex;
-    flex-direction: column;
-    width: 720px;
-    background: #F2F2F8;
-    border-radius: 24px;
-    padding: 40px;
-    gap: 32px;
+  display: flex;
+  flex-direction: column;
+  width: 720px;
+  background: #f2f2f8;
+  border-radius: 24px;
+  padding: 40px;
+  gap: 32px;
 }
 
 .textbox {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .textbox p {
-    opacity: .8;
+  opacity: 0.8;
 }
 
 #github-repo img {
-    width: 100%;
-    border-radius: 8px;
+  width: 100%;
+  border-radius: 8px;
 }
 
 #truehawkes-logo img {
-    width: 350px;
-    margin: 138px;
+  width: 350px;
+  margin: 138px;
 }
