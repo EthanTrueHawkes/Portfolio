@@ -54,6 +54,13 @@ export default function App() {
           <Route path="*" element={<Notfound />} />
         </Routes>
 
+        <button className="message-button">
+          <img
+            src="Assets/Icons/chat-SVGicon.svg"
+            alt="Message True Hawkes Icon"
+          />
+        </button>
+
         <footer>
           <p>By Ethan Hawkes</p>
           <a href="https://github.com/EthanTrueHawkes/Portfolio.git">
