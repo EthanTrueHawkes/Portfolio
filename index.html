@@ -1,141 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <!--This seciton is primarily for the browser to know how to render, and titling the page-->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/vhu5tvf.css" />
-    <title>True Hawkes Portfolio</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+
+    <title>True Hawkes Portfolio React</title>
   </head>
-
   <body>
-    <header>
-      <nav>
-        <!-- This is the Navigation elements that will become the upper NAV bar.-->
-
-        <ul>
-          <li><a href="index.html">Projects</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-
-        <a
-          href="login.html"
-          class="login-button"
-          title="Log in"
-          aria-label="Log in"
-        >
-          <img src="Assets/Icons/Login-person-SVGicon.svg" alt="Log In Icon" />
-        </a>
-      </nav>
-    </header>
-
-    <main>
-      <!-- This is the main content of the page in this section.-->
-      <section class="page-content">
-        <section>
-          <section class="hero">
-            <div id="hero-column-one">
-              <img
-                class="hero-title"
-                src="Assets/Icons/Hero-title-ethantruehawkes-SVGicon.svg"
-                alt="Ethan True Hawkes"
-              />
-
-              <div class="landing-topinterests">
-                <!--Section for my interests in UX Design-->
-                <p>Top Interests</p>
-
-                <ul>
-                  <li>
-                    <h3>Design Systems</h3>
-                    <p>
-                      Uniform, scalable designs built in collab between designer
-                      and dev.
-                    </p>
-                  </li>
-
-                  <li>
-                    <h3>Interaction Design</h3>
-                    <p>
-                      Motion and feedback to page interaction, increasing user
-                      delight.
-                    </p>
-                  </li>
-
-                  <li>
-                    <h3>User Testing</h3>
-                    <p>
-                      User feedback and insights to iterate and improve the
-                      product.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div id="hero-column-two">
-              <img
-                src="Assets/Icons/Nophoto-graphic-SVGicon.svg"
-                alt="Hero Graphic"
-              />
-            </div>
-          </section>
-
-          <div id="landing-floating-seemywork">
-            <p>See my work</p>
-            <img src="Assets/Icons/arrow-SVGicon.svg" alt="Arrow Icon" />
-          </div>
-        </section>
-
-        <section class="work-section">
-          <header>
-            <h2>Projects</h2>
-          </header>
-
-          <div>
-            <div id="projects-toggle">
-              <span>All</span>
-              <span>Work</span>
-              <span>Personal</span>
-            </div>
-            <div class="work-container">
-              <div class="singular-project">
-                <img
-                  src="Assets/Outbound_Project_Placeholder.png"
-                  alt="Outbound Project Image"
-                />
-                <div class="work-textbox">
-                  <h3>Outbound</h3>
-                  <span>Personal </span>
-                  <span>13 views</span>
-                  <p>
-                    A 0 to 1 creation of a sustainable product return flow
-                    enabling customers to easily return projects while reducing
-                    the CO2 emissions and trash generated through the product.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <button class="message-button">
-        <img
-          src="Assets/Icons/chat-SVGicon.svg"
-          alt="Message True Hawkes Icon"
-        />
-      </button>
-    </main>
-
-    <footer>
-      <!--This is the footer of the page-->
-
-      <p>By Ethan Hawkes</p>
-      <a href="https://github.com/EthanTrueHawkes/Portfolio.git"
-        >GitHub Repository</a
-      >
-    </footer>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.jsx"></script>
   </body>
 </html>
