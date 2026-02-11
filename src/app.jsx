@@ -13,41 +13,17 @@ import { Resume } from "./resume/resume";
 import { About } from "./about/about";
 import { Home } from "./home/home";
 import { Notfound } from "./notfound/notfound";
+import Header from "./Components/Layout/Header";
+import Footer from "./Components/Layout/footer";
 
 export default function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <header>
-          <nav>
-            <ul>
-              <li>
-                <NavLink to="">Projects</NavLink>
-              </li>
-              <li>
-                <NavLink to="resume">Resume</NavLink>
-              </li>
-              <li>
-                <NavLink to="about">About</NavLink>
-              </li>
-            </ul>
-
-            <NavLink
-              to="login"
-              class="login-button"
-              title="Log in"
-              aria-label="Log in"
-            >
-              <img
-                src="Assets/Icons/Login-person-SVGicon.svg"
-                alt="Log In Icon"
-              />
-            </NavLink>
-          </nav>
-        </header>
+        <Header />
 
         <Routes>
-          <Route path="/" element={<Home />} exact />
+          <Route path="/" element={<Home />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
@@ -56,17 +32,12 @@ export default function App() {
 
         <button className="message-button">
           <img
-            src="Assets/Icons/chat-SVGicon.svg"
+            src="/Assets/Icons/chat-SVGicon.svg"
             alt="Message True Hawkes Icon"
           />
         </button>
 
-        <footer>
-          <p>By Ethan Hawkes</p>
-          <a href="https://github.com/EthanTrueHawkes/Portfolio.git">
-            GitHub Repository
-          </a>
-        </footer>
+        <Footer />
       </div>
     </BrowserRouter>
   );

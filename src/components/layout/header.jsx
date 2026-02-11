@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -6,19 +7,19 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <NavLink to="">Projects</NavLink>
+            <NavLink to="/">Projects</NavLink>
           </li>
           <li>
-            <NavLink to="resume">Resume</NavLink>
+            <NavLink to="/resume">Resume</NavLink>
           </li>
           <li>
-            <NavLink to="about">About</NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
         </ul>
 
         <NavLink
           to="login"
-          class="login-button"
+          className="login-button"
           title="Log in"
           aria-label="Log in"
         >
