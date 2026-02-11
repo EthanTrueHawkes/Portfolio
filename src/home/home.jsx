@@ -1,4 +1,5 @@
 import React from "react";
+import { ProjectSpotlight } from "../components/ui/project-spotlight";
 
 export function Home() {
   return (
@@ -69,22 +70,12 @@ export function Home() {
               <span>Personal</span>
             </div>
             <div className="work-container">
-              <div className="singular-project">
-                <img
-                  src="Assets/Outbound_Project_Placeholder.png"
-                  alt="Outbound Project Image"
-                />
-                <div className="work-textbox">
-                  <h3>Outbound</h3>
-                  <span>Personal </span>
-                  <span>13 views</span>
-                  <p>
-                    A 0 to 1 creation of a sustainable product return flow
-                    enabling customers to easily return projects while reducing
-                    the CO2 emissions and trash generated through the product.
-                  </p>
-                </div>
-              </div>
+              <ProjectSpotlight
+                title="Outbound"
+                description="A 0 to 1 creation of a sustainable product return flow enabling customers to easily return projects while reducing the CO2 emissions and trash generated through the product."
+                tags={["Personal", "13 views"]}
+                image="Assets/Outbound_Project_Placeholder.png"
+              />
             </div>
           </div>
         </section>
