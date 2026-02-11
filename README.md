@@ -20,13 +20,12 @@ Imagine a designer who is proficent with design systems and has technical coding
 
 ![LandingPage](Assets/PortfolioLandingPage.png)
 
-The first fold of landing page will display my name, and a short ad lib about me, messages, and navigation. It will also contain my top 3 interests in the field of both UX Design & Computer Science. When one of these interests is hovered a visual design corresponding to the item will appear to the right of the item. 
+The first fold of landing page will display my name, and a short ad lib about me, messages, and navigation. It will also contain my top 3 interests in the field of both UX Design & Computer Science. When one of these interests is hovered a visual design corresponding to the item will appear to the right of the item.
 
 ![ProjectPage](Assets/PortfolioProjectView.png)
 
 The project view will display the visual of the project with a short description, then jump into scope, role, and timeline.
 Afterwards the content for the case study will follow and have a persistent UI showcasing where in the process the user currently is.
-
 
 ```mermaid
 sequenceDiagram
@@ -37,9 +36,9 @@ sequenceDiagram
 
 ### Key features
 
-- Introductory landing page about owner. 
+- Introductory landing page about owner.
 - 1 design portfolio piece.
-- Live chat feature with owner. 
+- Live chat feature with owner.
 - Log in feature for accessing locked portfolio pieces.
 - Light / dark mode toggle w/ cookie.
 - Owner portfolio piece analytics with viewcount & duration.
@@ -58,7 +57,6 @@ I am going to use the required technologies in the following ways.
   - retrieve & store page analytic for owners view
 - **DB/Login** - Store users, messages, preferences in database. Register and login users. Cant view project unless logged in to whitelisted account.
 - **WebSocket** - When users send messages they update live to their pages.
-
 
 ## 🚀 AWS deliverable
 
@@ -95,9 +93,9 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Bundled using Vite** - I did not complete this part of the deliverable.
-- [ ] **Components** - I did not complete this part of the deliverable.
-- [ ] **Router** - I did not complete this part of the deliverable.
+- [x] **Bundled using Vite** - The project is bundled using vite.
+- [x] **Components** - I turned each pages unique content into a component, along with any item that is used more 2+ times.
+- [x] **Router** - Routes have been set up to work, changing the main body content of the page.
 
 ## 🚀 React part 2: Reactivity deliverable
 
