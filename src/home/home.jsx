@@ -10,7 +10,7 @@ export function Home() {
             <div id="hero-column-one">
               <img
                 className="hero-title"
-                src="Assets/Icons/Hero-title-ethantruehawkes-SVGicon.svg"
+                src="src/Assets/Icons/Hero-title-ethantruehawkes-SVGicon.svg"
                 alt="Ethan True Hawkes"
               />
 
@@ -46,7 +46,7 @@ export function Home() {
             </div>
             <div id="hero-column-two">
               <img
-                src="Assets/Icons/Nophoto-graphic-SVGicon.svg"
+                src="src/Assets/Icons/Nophoto-graphic-SVGicon.svg"
                 alt="Hero Graphic"
               />
             </div>
@@ -54,7 +54,7 @@ export function Home() {
 
           <div id="landing-floating-seemywork">
             <p>See my work</p>
-            <img src="Assets/Icons/arrow-SVGicon.svg" alt="Arrow Icon" />
+            <img src="src/Assets/Icons/arrow-SVGicon.svg" alt="Arrow Icon" />
           </div>
         </section>
 
@@ -74,7 +74,7 @@ export function Home() {
                 title="Outbound"
                 description="A 0 to 1 creation of a sustainable product return flow enabling customers to easily return projects while reducing the CO2 emissions and trash generated through the product."
                 tags={["Personal", "13 views"]}
-                image="Assets/Outbound_Project_Placeholder.png"
+                image="src/Assets/Outbound_Project_Placeholder.png"
               />
             </div>
           </div>

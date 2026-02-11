@@ -6,7 +6,7 @@ export function About() {
       <section className="about-page">
         <section id="truehawkes-logo">
           <img
-            src="Assets/Icons/Nophoto-graphic-SVGicon.svg"
+            src="src/Assets/Icons/Nophoto-graphic-SVGicon.svg"
             alt="True Hawkes Logo"
           />
         </section>
@@ -38,7 +38,7 @@ export function About() {
 
           <div id="github-repo">
             <img
-              src="assets/GitHub_Repository_Placeholder.png"
+              src="src/Assets/GitHub_Repository_Placeholder.png"
               alt="Placeholder of GitHub repository."
             />
           </div>

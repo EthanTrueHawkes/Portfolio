@@ -4,7 +4,7 @@ export function MessageLaucher() {
   return (
     <button className="message-button">
       <img
-        src="/Assets/Icons/chat-SVGicon.svg"
+        src="/src/Assets/Icons/chat-SVGicon.svg"
         alt="Message True Hawkes Icon"
       />
     </button>
