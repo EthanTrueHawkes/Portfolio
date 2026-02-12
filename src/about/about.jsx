@@ -36,7 +36,7 @@ export function About() {
 
           <div id="github-repo">
             <img
-              src="/Assets/GitHub_Repository_Placeholder.png"
+              src="/static/GitHub_Repository_Placeholder.png"
               alt="Placeholder of GitHub repository."
             />
           </div>

@@ -74,7 +74,7 @@ export function Home() {
                 title="Outbound"
                 description="A 0 to 1 creation of a sustainable product return flow enabling customers to easily return projects while reducing the CO2 emissions and trash generated through the product."
                 tags={["Personal", "13 views"]}
-                image="Assets/Outbound_Project_Placeholder.png"
+                image="/static/Outbound_Project_Placeholder.png"
               />
             </div>
           </div>
