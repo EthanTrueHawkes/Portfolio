@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 
 export default function Header() {
   return (
@@ -23,10 +24,7 @@ export default function Header() {
           title="Log in"
           aria-label="Log in"
         >
-          <img
-            src="src/Assets/Icons/Login-person-SVGicon.svg"
-            alt="Log In Icon"
-          />
+          <img src={profileIcon} alt="Log In Icon" />
         </NavLink>
       </nav>
     </header>

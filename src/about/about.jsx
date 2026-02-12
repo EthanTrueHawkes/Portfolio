@@ -1,14 +1,12 @@
 import React from "react";
+import noImageGraphic from "../Assets/Icons/Nophoto-graphic-SVGicon.svg";
 
 export function About() {
   return (
     <main>
       <section className="about-page">
         <section id="truehawkes-logo">
-          <img
-            src="src/Assets/Icons/Nophoto-graphic-SVGicon.svg"
-            alt="True Hawkes Logo"
-          />
+          <img src={noImageGraphic} alt="True Hawkes Logo" />
         </section>
 
         <section className="about-contentbox">
@@ -38,7 +36,7 @@ export function About() {
 
           <div id="github-repo">
             <img
-              src="src/Assets/GitHub_Repository_Placeholder.png"
+              src="/Assets/GitHub_Repository_Placeholder.png"
               alt="Placeholder of GitHub repository."
             />
           </div>

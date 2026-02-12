@@ -1,5 +1,8 @@
 import React from "react";
 import { ProjectSpotlight } from "../components/ui/project-spotlight";
+import arrowIcon from "../Assets/Icons/Arrow-SVGicon.svg";
+import heroTitleGraphic from "../Assets/Icons/Hero-title-ethantruehawkes-SVGicon.svg";
+import noPhotoGraphic from "../Assets/Icons/Nophoto-graphic-SVGicon.svg";
 
 export function Home() {
   return (
@@ -10,7 +13,7 @@ export function Home() {
             <div id="hero-column-one">
               <img
                 className="hero-title"
-                src="src/Assets/Icons/Hero-title-ethantruehawkes-SVGicon.svg"
+                src={heroTitleGraphic}
                 alt="Ethan True Hawkes"
               />
 
@@ -45,16 +48,13 @@ export function Home() {
               </div>
             </div>
             <div id="hero-column-two">
-              <img
-                src="src/Assets/Icons/Nophoto-graphic-SVGicon.svg"
-                alt="Hero Graphic"
-              />
+              <img src={noPhotoGraphic} alt="Hero Graphic" />
             </div>
           </section>
 
           <div id="landing-floating-seemywork">
             <p>See my work</p>
-            <img src="src/Assets/Icons/arrow-SVGicon.svg" alt="Arrow Icon" />
+            <img src={arrowIcon} alt="Arrow Icon" />
           </div>
         </section>
 
@@ -74,7 +74,7 @@ export function Home() {
                 title="Outbound"
                 description="A 0 to 1 creation of a sustainable product return flow enabling customers to easily return projects while reducing the CO2 emissions and trash generated through the product."
                 tags={["Personal", "13 views"]}
-                image="src/Assets/Outbound_Project_Placeholder.png"
+                image="Assets/Outbound_Project_Placeholder.png"
               />
             </div>
           </div>

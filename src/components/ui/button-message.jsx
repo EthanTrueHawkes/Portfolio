@@ -1,12 +1,10 @@
 import React from "react";
+import chatIcon from "../../Assets/Icons/Chat-SVGicon.svg";
 
 export function MessageLaucher() {
   return (
     <button className="message-button">
-      <img
-        src="/src/Assets/Icons/chat-SVGicon.svg"
-        alt="Message True Hawkes Icon"
-      />
+      <img src={chatIcon} alt="Message True Hawkes Icon" />
     </button>
   );
 }
