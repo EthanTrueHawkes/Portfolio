@@ -32,46 +32,6 @@ span {
   color: #141414;
 }
 
-nav ul {
-  display: flex;
-  width: 327px;
-  height: 48px;
-  gap: 51px;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-
-  position: fixed;
-  top: 2rem;
-  right: 9rem;
-
-  border-radius: 360px;
-  background: #f2f2f8;
-}
-
-nav a {
-  text-decoration: none;
-  color: #141414;
-  font-weight: 500;
-}
-
-.login-button {
-  display: flex;
-  width: 48px;
-  height: 48px;
-  justify-content: center;
-  align-items: center;
-
-  position: fixed;
-  top: 2rem;
-  right: 5rem;
-
-  border-radius: 360px;
-  background: #f2f2f8;
-}
-
 .page-content {
   margin-left: 80px;
   margin-right: 80px;
@@ -208,6 +168,13 @@ footer a {
 
 .textbox p {
   opacity: 0.8;
+}
+
+.button-text-primary {
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #ffffff;
 }
 
 #github-repo img {

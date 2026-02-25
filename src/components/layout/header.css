@@ -1,0 +1,83 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.header-nav {
+  display: flex;
+  width: 1120px;
+  height: 72px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 16px 0 16px;
+  position: relative;
+
+  border-radius: 0 0 16px 16px;
+  background: #e6e8e0;
+}
+
+.header-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+
+  display: flex;
+  gap: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.header-nav ul li a {
+  text-decoration: none;
+  color: #000000;
+}
+
+#logo {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 8px;
+  background: linear-gradient(132deg, #646d46 9.49%, #414831 101.51%);
+}
+
+#nav-content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+
+  gap: 24px;
+}
+
+#login-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+
+  border-radius: 8px;
+}
+
+#login-button p {
+  font-size: 12px;
+  font-weight: 700;
+  color: #616a44;
+}
+
+#nav-message-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94px;
+  height: 40px;
+
+  border-radius: 8px;
+  background: linear-gradient(132deg, #646d46 9.49%, #414831 101.51%);
+}

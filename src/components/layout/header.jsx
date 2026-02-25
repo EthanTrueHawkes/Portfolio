@@ -1,11 +1,15 @@
 import React from "react";
+import "./header.css";
+
 import { NavLink } from "react-router-dom";
 import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 
 export default function Header() {
   return (
     <header>
-      <nav>
+      <nav className="header-nav">
+        <div id="logo"></div>
+
         <ul>
           <li>
             <NavLink to="/">Projects</NavLink>
@@ -18,14 +22,20 @@ export default function Header() {
           </li>
         </ul>
 
-        <NavLink
-          to="login"
-          className="login-button"
-          title="Log in"
-          aria-label="Log in"
-        >
-          <img src={profileIcon} alt="Log In Icon" />
-        </NavLink>
+        <div id="nav-content-right">
+          <NavLink
+            to="login"
+            title="Log in"
+            aria-label="Log in"
+            id="login-button"
+          >
+            <img src={profileIcon} alt="Log In Icon" />
+            <p>Login</p>
+          </NavLink>
+          <div id="nav-message-button">
+            <p className="button-text-primary">Message</p>
+          </div>
+        </div>
       </nav>
     </header>
   );
