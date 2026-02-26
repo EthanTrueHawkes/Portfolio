@@ -1,7 +1,18 @@
 import React from "react";
 import "./login-styles.css";
 
-export function Login() {
+export function Login({ setUser }) {
+  const [text, setText] = React.useState("");
+  function loginUser() {
+    console.log("login");
+    localStorage.setItem("user", text);
+    setUser(text);
+  }
+
+  function textChange(e) {
+    setText(e.target.value);
+  }
+
   return (
     <main className="login-page">
       <section className="login-section">
@@ -15,23 +26,21 @@ export function Login() {
         <form method="get" action="index.html" className="login-form">
           <div className="field-group">
             <div className="form-field">
-              <p className="field-title">Email:</p>
-              <input type="text" placeholder="johnyappleseed@email.com" />
+              <p className="field-title">Username:</p>
+              <input type="text" placeholder="username" onChange={textChange} />
             </div>
 
             <div className="form-field">
               <p className="field-title">Password:</p>
-              <input type="password" placeholder="****" />
+              <input type="password" placeholder="password" />
             </div>
           </div>
 
           <div className="button-group">
-            <button type="submit" className="button-primary">
+            <button className="button-primary" onClick={loginUser}>
               Log in
             </button>
-            <button type="submit" className="button-secondary">
-              Create Account
-            </button>
+            <button className="button-secondary">Create Account</button>
           </div>
         </form>
       </section>

@@ -4,7 +4,15 @@ import "./header.css";
 import { NavLink } from "react-router-dom";
 import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 
-export default function Header() {
+export default function Header({ user }) {
+  function DisplayUsername() {
+    if (user) {
+      return user;
+    } else {
+      return "Login";
+    }
+  }
+
   return (
     <header>
       <nav className="header-nav">
@@ -30,7 +38,7 @@ export default function Header() {
             id="login-button"
           >
             <img src={profileIcon} alt="Log In Icon" />
-            <p>Login</p>
+            <p>{DisplayUsername()}</p>
           </NavLink>
           <div id="nav-message-button">
             <p className="button-text-primary">Message</p>
