@@ -1,12 +1,17 @@
 import React from "react";
 import "./login-styles.css";
 
+import { useNavigate } from "react-router-dom";
+
 export function Login({ setUser }) {
   const [text, setText] = React.useState("");
+  const navigate = useNavigate();
+
   function loginUser() {
     console.log("login");
     localStorage.setItem("user", text);
     setUser(text);
+    navigate("/");
   }
 
   function textChange(e) {
@@ -37,7 +42,11 @@ export function Login({ setUser }) {
           </div>
 
           <div className="button-group">
-            <button className="button-primary" onClick={loginUser}>
+            <button
+              type="button"
+              className="button-primary"
+              onClick={loginUser}
+            >
               Log in
             </button>
             <button className="button-secondary">Create Account</button>

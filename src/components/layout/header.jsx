@@ -31,15 +31,22 @@ export default function Header({ user }) {
         </ul>
 
         <div id="nav-content-right">
-          <NavLink
-            to="login"
-            title="Log in"
-            aria-label="Log in"
-            id="login-button"
-          >
-            <img src={profileIcon} alt="Log In Icon" />
-            <p>{DisplayUsername()}</p>
-          </NavLink>
+          {user ? (
+            <button id="profile-button">
+              <img src={profileIcon} alt="User Icon" />
+              <p>{DisplayUsername()}</p>
+            </button>
+          ) : (
+            <NavLink
+              to="login"
+              title="Log in"
+              aria-label="Log in"
+              id="profile-button"
+            >
+              <img src={profileIcon} alt="Log In Icon" />
+              <p>{DisplayUsername()}</p>
+            </NavLink>
+          )}
           <div id="nav-message-button">
             <p className="button-text-primary">Message</p>
           </div>
