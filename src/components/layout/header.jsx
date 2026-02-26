@@ -1,10 +1,12 @@
 import React from "react";
 import "./header.css";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 
 export default function Header({ user }) {
+  const navigate = useNavigate();
+
   function DisplayUsername() {
     if (user) {
       return user;
@@ -12,6 +14,22 @@ export default function Header({ user }) {
       return "Login";
     }
   }
+
+  React.useEffect(() => {
+    function KeyboardNav(e) {
+      if (e.key === "a") {
+        navigate("/about");
+      } else if (e.key === "w") {
+        navigate("/");
+      } else if (e.key === "r") {
+        navigate("/resume");
+      }
+    }
+    window.addEventListener("keydown", KeyboardNav);
+    return () => {
+      window.removeEventListener("keydown", KeyboardNav);
+    };
+  }, []);
 
   return (
     <header>
