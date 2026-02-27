@@ -10,16 +10,19 @@ export default function NavBarLink({ to, title }) {
         isActive ? "navbar-link-active" : "navbar-link-inactive"
       }
     >
-      <div className="keyboard-nav-icon">
-        <p className="microcopy">{shortcutKey}</p>
-      </div>
-      <span
-        className={({ isActive }) =>
-          isActive ? "button-text-secondary" : "button-text-muted"
-        }
-      >
-        {title}
-      </span>
+      {({ isActive }) => {
+        const textClass = isActive
+          ? "button-text-secondary"
+          : "button-text-muted";
+        return (
+          <>
+            <div className="keyboard-nav-icon">
+              <p className="microcopy">{shortcutKey}</p>
+            </div>
+            <span className={textClass}>{title}</span>
+          </>
+        );
+      }}
     </NavLink>
   );
 }
