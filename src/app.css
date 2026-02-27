@@ -32,6 +32,10 @@ span {
   color: #141414;
 }
 
+.microcopy {
+  font-size: 10px;
+}
+
 .page-content {
   margin-left: 80px;
   margin-right: 80px;

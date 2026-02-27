@@ -1,5 +1,6 @@
 import React from "react";
 import "./header.css";
+import NavBarLink from "../../components/ui/navbar-link";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
@@ -38,13 +39,13 @@ export default function Header({ user }) {
 
         <ul>
           <li>
-            <NavLink to="/">Projects</NavLink>
+            <NavBarLink to="/" title="Work" />
           </li>
           <li>
-            <NavLink to="/resume">Resume</NavLink>
+            <NavBarLink to="/resume" title="Resume" />
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavBarLink to="/about" title="About" />
           </li>
         </ul>
 
