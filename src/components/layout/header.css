@@ -39,7 +39,7 @@ header {
   color: #000000;
 }
 
-.keyboard-nav-icon {
+.navbar-link-active div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,6 +48,25 @@ header {
 
   border-radius: 4px;
   background: #646d46;
+}
+
+.navbar-link-active p {
+  color: #ffffff;
+}
+
+.navbar-link-inactive div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+
+  border-radius: 4px;
+  background: #dadcd3;
+}
+
+.navbar-link-inactive p {
+  color: #141414;
 }
 
 #logo {

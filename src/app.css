@@ -36,6 +36,28 @@ span {
   font-size: 10px;
 }
 
+.button-text-primary {
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #ffffff;
+}
+
+.button-text-secondary {
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #141414;
+}
+
+.button-text-muted {
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #141414;
+  opacity: 0.6;
+}
+
 .page-content {
   margin-left: 80px;
   margin-right: 80px;

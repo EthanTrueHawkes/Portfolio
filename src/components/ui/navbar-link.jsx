@@ -4,11 +4,22 @@ import { NavLink } from "react-router-dom";
 export default function NavBarLink({ to, title }) {
   const shortcutKey = title[0].toUpperCase();
   return (
-    <NavLink to={to}>
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        isActive ? "navbar-link-active" : "navbar-link-inactive"
+      }
+    >
       <div className="keyboard-nav-icon">
         <p className="microcopy">{shortcutKey}</p>
       </div>
-      {title}
+      <span
+        className={({ isActive }) =>
+          isActive ? "button-text-secondary" : "button-text-muted"
+        }
+      >
+        {title}
+      </span>
     </NavLink>
   );
 }
