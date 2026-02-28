@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export function ProjectSpotlight({ title, description, tags, image }) {
+  const [pageViews, setPageViews] = React.useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPageViews((prevViews) => prevViews + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="singular-project">
       <div className="project-info">
@@ -19,6 +29,11 @@ export function ProjectSpotlight({ title, description, tags, image }) {
         alt={title + " Project Image"}
         className="project-image"
       />
+      <div className="project-analytics">
+        <span>
+          {pageViews} View{pageViews === 1 ? null : "s"}
+        </span>
+      </div>
     </div>
   );
 }
