@@ -1,4 +1,6 @@
 import React from "react";
+import "./home.css";
+
 import { ProjectSpotlight } from "../components/ui/project-spotlight";
 import arrowIcon from "../Assets/Icons/Arrow-SVGicon.svg";
 import heroTitleGraphic from "../Assets/Icons/Hero-title-ethantruehawkes-SVGicon.svg";
@@ -64,19 +66,12 @@ export function Home() {
           </header>
 
           <div>
-            <div id="projects-toggle">
-              <span>All</span>
-              <span>Work</span>
-              <span>Personal</span>
-            </div>
-            <div className="work-container">
-              <ProjectSpotlight
-                title="Outbound"
-                description="A 0 to 1 creation of a sustainable product return flow enabling customers to easily return projects while reducing the CO2 emissions and trash generated through the product."
-                tags={["Personal", "13 views"]}
-                image="/static/Outbound_Project_Placeholder.png"
-              />
-            </div>
+            <ProjectSpotlight
+              title="Outbound - Better Returns"
+              description="Conceptual project built around decreasing product return emissions and business costs."
+              tags={["Personal", "13 views"]}
+              image="/static/Outbound.png"
+            />
           </div>
         </section>
       </section>
