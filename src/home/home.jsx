@@ -65,12 +65,18 @@ export function Home() {
             <h2>Projects</h2>
           </header>
 
-          <div>
+          <div className="projects-container">
             <ProjectSpotlight
               title="Outbound - Better Returns"
               description="Conceptual project built around decreasing product return emissions and business costs."
               tags={["User Testing", "Product Thinking", "Playground"]}
               image="/static/Outbound.png"
+            />
+            <ProjectSpotlight
+              title="Strong Youth Project"
+              description="Conceptual project built around decreasing product return emissions and business costs."
+              tags={["User Research", "Design System", "Work"]}
+              image="/static/StrongYouth.png"
             />
           </div>
         </section>
