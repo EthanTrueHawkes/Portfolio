@@ -8,8 +8,11 @@ export function ProjectSpotlight({ title, description, tags, image }) {
         <p>{description}</p>
       </div>
       <div className="project-tags">
-        <div>{tags[0]} </div>
-        <div>{tags[1]}</div>
+        <div className="project-tag">
+          <span>{tags[0]}</span>
+        </div>
+        <div className="project-tag">{tags[1]}</div>
+        <div className="project-tag">{tags[2]}</div>
       </div>
       <img
         src={image}
