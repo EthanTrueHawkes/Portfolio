@@ -8,11 +8,8 @@ import noPhotoGraphic from "../Assets/Icons/Nophoto-graphic-SVGicon.svg";
 import SingleInterest from "../components/ui/singleInterest";
 
 export function Home() {
-  const [isActive, setIsActive] = React.useState(false);
+  const [isSelectedTitle, setIsSelectedTitle] = React.useState(false);
 
-  function toggleActive() {
-    setIsActive((prev) => !prev);
-  }
   return (
     <main>
       <section className="page-content">
@@ -32,16 +29,24 @@ export function Home() {
                   <SingleInterest
                     title="Design Systems"
                     description="Uniform, scalable designs built in collab between designer and dev."
+                    selected={isSelectedTitle === "Design Systems"}
+                    onClick={() => setIsSelectedTitle("Design Systems")}
                   />
 
                   <SingleInterest
                     title="Interaction Design"
                     description="Motion and feedback to page interaction, increasing user delight."
+                    selected={isSelectedTitle === "Interaction Design"}
+                    onClick={() => setIsSelectedTitle("Interaction Design")}
                   />
 
                   <SingleInterest
                     title="Information Architecture"
                     description="Organizing content in a way that is intuitive and user-friendly."
+                    selected={isSelectedTitle === "Information Architecture"}
+                    onClick={() =>
+                      setIsSelectedTitle("Information Architecture")
+                    }
                   />
                 </div>
               </div>

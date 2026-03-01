@@ -130,6 +130,39 @@
   background: #e0e0dd;
 }
 
+.singleInterest--selected {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 8px;
+  height: auto;
+
+  align-items: start;
+
+  list-style: none;
+
+  border-radius: 8px;
+  background: #e0e0dd;
+}
+
+.singleInterest {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 8px;
+  height: auto;
+
+  align-items: start;
+
+  list-style: none;
+
+  border-radius: 8px;
+}
+
 .singleInterest p {
+  text-align: left;
+}
+
+.singleInterest--selected p {
   text-align: left;
 }
