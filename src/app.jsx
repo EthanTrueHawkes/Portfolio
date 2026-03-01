@@ -1,7 +1,13 @@
 import React from "react";
 import "./app.css";
 
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 import { Login } from "./login/login";
 import { Resume } from "./resume/resume";
 import { About } from "./about/about";
@@ -14,6 +20,7 @@ import { MessageLaucher } from "./components/ui/button-message";
 export default function App() {
   const [user, setUser] = React.useState(localStorage.getItem("user") || null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   function logoutUser() {
     localStorage.removeItem("user");
@@ -29,7 +36,9 @@ export default function App() {
 
   return (
     <div className="app">
-      <Header logoutUser={logoutUser} user={user} />
+      {location.pathname !== "/login" && (
+        <Header logoutUser={logoutUser} user={user} />
+      )}
 
       <Routes>
         <Route path="/" element={<Home />} />
