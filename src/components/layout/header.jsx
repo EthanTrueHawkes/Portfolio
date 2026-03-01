@@ -4,6 +4,7 @@ import NavBarLink from "../../components/ui/navbar-link";
 
 import { NavLink, useNavigate } from "react-router-dom";
 import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
+import sendIcon from "../../Assets/Icons/Send.svg";
 
 export default function Header({ user }) {
   const navigate = useNavigate();
@@ -102,7 +103,7 @@ export default function Header({ user }) {
                     className="nav-message-dropdown-input"
                   />
                   <button className="nav-message-dropdown-send">
-                    <img src="/src/Assets/Icons/Send.svg" alt="Send Message" />
+                    <img src={sendIcon} alt="Send Message" />
                   </button>
                 </form>
               </div>
