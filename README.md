@@ -101,8 +101,8 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **All functionality implemented or mocked out** - I did not complete this part of the deliverable.
-- [ ] **Hooks** - I did not complete this part of the deliverable.
+- [x] **All functionality implemented or mocked out** - I have added most functionality, there is a login and logout feature, that chat window opens when pressed, and the user can navigate the pages using the keyboard
+- [x] **Hooks** - I used useEffect and useState hooks to create the message window, and display a chat after time passes, allow users to navigate using keyboard keys to pages, type in a username and sign in (password not used currently), and implment a "view" count for project pieces that currentl increments upward each second or so.
 
 ## 🚀 Service deliverable
 
