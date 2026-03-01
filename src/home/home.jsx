@@ -19,34 +19,34 @@ export function Home() {
                 alt="Ethan True Hawkes"
               />
 
-              <div className="landing-topinterests">
-                <p>Top Interests</p>
+              <div className="landing-topInterests">
+                <p className="label">Obsessions</p>
 
-                <ul>
-                  <li>
+                <div className="landing-topInterests-container">
+                  <div className="singleInterest">
                     <h3>Design Systems</h3>
                     <p>
                       Uniform, scalable designs built in collab between designer
                       and dev.
                     </p>
-                  </li>
+                  </div>
 
-                  <li>
+                  <div className="singleInterest">
                     <h3>Interaction Design</h3>
                     <p>
                       Motion and feedback to page interaction, increasing user
                       delight.
                     </p>
-                  </li>
+                  </div>
 
-                  <li>
+                  <div className="singleInterest">
                     <h3>User Testing</h3>
                     <p>
                       User feedback and insights to iterate and improve the
                       product.
                     </p>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
             </div>
             <div id="hero-column-two">

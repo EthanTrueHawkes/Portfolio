@@ -79,3 +79,37 @@
   padding: 12px;
   border-radius: 8px;
 }
+
+/* Top Interests Seciton */
+.landing-topInterests {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.landing-topInterests-container {
+  display: flex;
+  flex-direction: column;
+  width: 363px;
+  height: auto;
+
+  padding: 16px;
+
+  background: #efefee;
+  border-radius: 16px;
+}
+
+.singleInterest {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  gap: 8px;
+  width: fill;
+  height: auto;
+
+  list-style: none;
+
+  border-radius: 24px;
+  background: #f2f2f8;
+}

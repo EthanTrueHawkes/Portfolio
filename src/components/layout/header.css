@@ -14,6 +14,9 @@ header {
 
   border-radius: 0 0 16px 16px;
   background: #e6e8e0;
+
+  position: fixed;
+  z-index: 1000;
 }
 
 .header-nav ul {
