@@ -5,8 +5,14 @@ import { ProjectSpotlight } from "../components/ui/project-spotlight";
 import arrowIcon from "../Assets/Icons/Arrow-SVGicon.svg";
 import heroTitleGraphic from "../Assets/Icons/Hero-title-ethantruehawkes-SVGicon.svg";
 import noPhotoGraphic from "../Assets/Icons/Nophoto-graphic-SVGicon.svg";
+import SingleInterest from "../components/ui/singleInterest";
 
 export function Home() {
+  const [isActive, setIsActive] = React.useState(false);
+
+  function toggleActive() {
+    setIsActive((prev) => !prev);
+  }
   return (
     <main>
       <section className="page-content">
@@ -23,29 +29,20 @@ export function Home() {
                 <p className="label">Obsessions</p>
 
                 <div className="landing-topInterests-container">
-                  <div className="singleInterest">
-                    <h3>Design Systems</h3>
-                    <p>
-                      Uniform, scalable designs built in collab between designer
-                      and dev.
-                    </p>
-                  </div>
+                  <SingleInterest
+                    title="Design Systems"
+                    description="Uniform, scalable designs built in collab between designer and dev."
+                  />
 
-                  <div className="singleInterest">
-                    <h3>Interaction Design</h3>
-                    <p>
-                      Motion and feedback to page interaction, increasing user
-                      delight.
-                    </p>
-                  </div>
+                  <SingleInterest
+                    title="Interaction Design"
+                    description="Motion and feedback to page interaction, increasing user delight."
+                  />
 
-                  <div className="singleInterest">
-                    <h3>User Testing</h3>
-                    <p>
-                      User feedback and insights to iterate and improve the
-                      product.
-                    </p>
-                  </div>
+                  <SingleInterest
+                    title="Information Architecture"
+                    description="Organizing content in a way that is intuitive and user-friendly."
+                  />
                 </div>
               </div>
             </div>
