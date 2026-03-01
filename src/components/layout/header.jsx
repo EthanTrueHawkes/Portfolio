@@ -104,7 +104,7 @@ export default function Header({ logoutUser, user }) {
                   }}
                 >
                   <img src={logoutIcon} alt="Logout Icon" />
-                  <p className="button-text-primary">Logout</p>
+                  <p className="button-text-secondary">Logout</p>
                 </button>
               </div>
             </>

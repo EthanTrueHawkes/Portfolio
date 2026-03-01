@@ -203,6 +203,7 @@ header {
   gap: 8px;
 
   border-radius: 8px;
+  background: none;
 }
 
 .nav-button:hover {
