@@ -14,6 +14,11 @@
   gap: 32px;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+}
+
 input {
   display: flex;
   padding: 16px 24px;
@@ -82,4 +87,12 @@ h1,
   flex-direction: column;
 
   gap: 0.5rem;
+}
+
+#password-notImplemented {
+  opacity: 0.2;
+}
+
+#createAccount-notImplemented {
+  opacity: 0.2;
 }

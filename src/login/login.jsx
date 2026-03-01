@@ -27,7 +27,7 @@ export function Login({ loginUser }) {
               <input type="text" placeholder="username" onChange={textChange} />
             </div>
 
-            <div className="form-field">
+            <div className="form-field" id="password-notImplemented">
               <p className="field-title">Password:</p>
               <input type="password" placeholder="password" />
             </div>
@@ -41,7 +41,12 @@ export function Login({ loginUser }) {
             >
               Log in
             </button>
-            <button className="button-secondary">Create Account</button>
+            <button
+              className="button-secondary"
+              id="createAccount-notImplemented"
+            >
+              Create Account
+            </button>
           </div>
         </form>
       </section>
