@@ -53,8 +53,8 @@ export default function Header({ logoutUser, user }) {
   }, []);
 
   return (
-    <header>
-      <nav className="header-nav">
+    <header id="nav-header">
+      <nav className="header-nav-container">
         <div id="logo"></div>
 
         <ul>

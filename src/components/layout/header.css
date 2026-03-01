@@ -1,4 +1,4 @@
-header {
+#nav-header {
   display: flex;
   align-items: center;
   position: fixed;
@@ -6,7 +6,7 @@ header {
   width: 100%;
 }
 
-.header-nav {
+.header-nav-container {
   display: flex;
   width: 1120px;
   height: 72px;
@@ -19,7 +19,7 @@ header {
   background: #e6e8e0;
 }
 
-.header-nav ul {
+.header-nav-container ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -33,7 +33,7 @@ header {
   align-items: center;
 }
 
-.header-nav ul li a {
+.header-nav-container ul li a {
   display: flex;
   gap: 8px;
   flex-direction: row;
