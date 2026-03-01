@@ -5,11 +5,14 @@ import NavBarLink from "../../components/ui/navbar-link";
 import { NavLink, useNavigate } from "react-router-dom";
 import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 import sendIcon from "../../Assets/Icons/Send.svg";
+import logoutIcon from "../../Assets/Icons/Logout.svg";
 
-export default function Header({ user }) {
+export default function Header({ logoutUser, user }) {
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isMessagesOpen, setIsMessagesOpen] = React.useState(false);
   const [messages, setMessages] = React.useState([]);
+
+  const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
 
   function DisplayUsername() {
     if (user) {
@@ -20,7 +23,7 @@ export default function Header({ user }) {
   }
 
   React.useEffect(() => {
-    if (!isOpen) return;
+    if (!isMessagesOpen) return;
 
     const timer = setTimeout(() => {
       setMessages(
@@ -28,7 +31,7 @@ export default function Header({ user }) {
       );
     }, 1000);
     return () => clearTimeout(timer);
-  }, [isOpen]);
+  }, [isMessagesOpen]);
 
   React.useEffect(() => {
     function KeyboardNav(e) {
@@ -68,7 +71,13 @@ export default function Header({ user }) {
 
         <div id="nav-content-right">
           {user ? (
-            <button id="profile-button">
+            <button
+              id="profile-button"
+              onClick={() => {
+                setIsSettingsOpen((prev) => !prev);
+                isMessagesOpen && setIsMessagesOpen(false);
+              }}
+            >
               <img src={profileIcon} alt="User Icon" />
               <p>{DisplayUsername()}</p>
             </button>
@@ -83,10 +92,34 @@ export default function Header({ user }) {
               <p>{DisplayUsername()}</p>
             </NavLink>
           )}
-          <button id="nav-message-button" onClick={() => setIsOpen(!isOpen)}>
+
+          {isSettingsOpen && (
+            <>
+              <div className="nav-settings-dropdown">
+                <button
+                  className="nav-button"
+                  onClick={() => {
+                    setIsSettingsOpen(false);
+                    logoutUser();
+                  }}
+                >
+                  <img src={logoutIcon} alt="Logout Icon" />
+                  <p className="button-text-primary">Logout</p>
+                </button>
+              </div>
+            </>
+          )}
+
+          <button
+            id="nav-message-button"
+            onClick={() => {
+              setIsMessagesOpen((prev) => !prev);
+              isSettingsOpen && setIsSettingsOpen(false);
+            }}
+          >
             <p className="button-text-primary">Message</p>
           </button>
-          {isOpen && (
+          {isMessagesOpen && (
             <>
               <div className="nav-message-dropdown-container">
                 <div className="nav-message-dropdown-chat">

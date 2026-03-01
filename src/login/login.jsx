@@ -3,16 +3,8 @@ import "./login-styles.css";
 
 import { useNavigate } from "react-router-dom";
 
-export function Login({ setUser }) {
+export function Login({ loginUser }) {
   const [text, setText] = React.useState("");
-  const navigate = useNavigate();
-
-  function loginUser() {
-    console.log("login");
-    localStorage.setItem("user", text);
-    setUser(text);
-    navigate("/");
-  }
 
   function textChange(e) {
     setText(e.target.value);
@@ -45,7 +37,7 @@ export function Login({ setUser }) {
             <button
               type="button"
               className="button-primary"
-              onClick={loginUser}
+              onClick={() => loginUser(text)}
             >
               Log in
             </button>

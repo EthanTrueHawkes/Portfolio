@@ -1,7 +1,7 @@
 import React from "react";
 import "./app.css";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { Login } from "./login/login";
 import { Resume } from "./resume/resume";
 import { About } from "./about/about";
@@ -13,23 +13,35 @@ import { MessageLaucher } from "./components/ui/button-message";
 
 export default function App() {
   const [user, setUser] = React.useState(localStorage.getItem("user") || null);
+  const navigate = useNavigate();
+
+  function logoutUser() {
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/login");
+  }
+
+  function loginUser(text) {
+    localStorage.setItem("user", text);
+    setUser(text);
+    navigate("/");
+  }
+
   return (
-    <BrowserRouter>
-      <div className="app">
-        <Header user={user} />
+    <div className="app">
+      <Header logoutUser={logoutUser} user={user} />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/resume" element={<Resume />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login setUser={setUser} />} />
-          <Route path="*" element={<Notfound />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login loginUser={loginUser} />} />
+        <Route path="*" element={<Notfound />} />
+      </Routes>
 
-        <MessageLaucher />
+      <MessageLaucher />
 
-        <Footer />
-      </div>
-    </BrowserRouter>
+      <Footer />
+    </div>
   );
 }

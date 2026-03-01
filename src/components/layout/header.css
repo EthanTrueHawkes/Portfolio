@@ -178,3 +178,33 @@ header {
   background: #e0e0dd;
   border-radius: 8px 8px 8px 0px;
 }
+
+/* Nav Settings Dropdown Styles */
+
+.nav-settings-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 0px;
+
+  width: 200px;
+  padding: 12px;
+  background: #f0f1ec;
+  border-radius: 16px;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  padding: 16px;
+  gap: 8px;
+
+  border-radius: 8px;
+}
+
+.nav-button:hover {
+  background: #e0e0dd;
+}
