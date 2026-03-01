@@ -7,6 +7,8 @@ import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 
 export default function Header({ user }) {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [messages, setMessages] = React.useState([]);
 
   function DisplayUsername() {
     if (user) {
@@ -15,6 +17,17 @@ export default function Header({ user }) {
       return "Login";
     }
   }
+
+  React.useEffect(() => {
+    if (!isOpen) return;
+
+    const timer = setTimeout(() => {
+      setMessages(
+        "Hello, thanks for visiting my portfolio. Feel free to reach out!",
+      );
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [isOpen]);
 
   React.useEffect(() => {
     function KeyboardNav(e) {
@@ -69,9 +82,32 @@ export default function Header({ user }) {
               <p>{DisplayUsername()}</p>
             </NavLink>
           )}
-          <div id="nav-message-button">
+          <button id="nav-message-button" onClick={() => setIsOpen(!isOpen)}>
             <p className="button-text-primary">Message</p>
-          </div>
+          </button>
+          {isOpen && (
+            <>
+              <div className="nav-message-dropdown-container">
+                <div className="nav-message-dropdown-chat">
+                  {messages.length > 0 && (
+                    <div className="nav-message-owner">
+                      <p>{messages}</p>
+                    </div>
+                  )}
+                </div>
+                <form>
+                  <input
+                    type="text"
+                    placeholder="Enter message..."
+                    className="nav-message-dropdown-input"
+                  />
+                  <button className="nav-message-dropdown-send">
+                    <img src="/src/Assets/Icons/Send.svg" alt="Send Message" />
+                  </button>
+                </form>
+              </div>
+            </>
+          )}
         </div>
       </nav>
     </header>
