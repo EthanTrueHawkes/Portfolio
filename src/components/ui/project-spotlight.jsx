@@ -11,19 +11,21 @@ export function ProjectSpotlight({ title, description, tags, image }) {
     return () => clearInterval(interval);
   }, []);
 
+  function listTags(tags) {
+    return tags.map((tag) => (
+      <div className="project-tag">
+        <span>{tag}</span>
+      </div>
+    ));
+  }
+
   return (
     <div className="singular-project">
       <div className="project-info">
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
-      <div className="project-tags">
-        <div className="project-tag">
-          <span>{tags[0]}</span>
-        </div>
-        <div className="project-tag">{tags[1]}</div>
-        <div className="project-tag">{tags[2]}</div>
-      </div>
+      <div className="project-tags">{listTags(tags)}</div>
       <img
         src={image}
         alt={title + " Project Image"}

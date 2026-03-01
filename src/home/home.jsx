@@ -75,7 +75,12 @@ export function Home() {
             <ProjectSpotlight
               title="Strong Youth Project"
               description="Conceptual project built around decreasing product return emissions and business costs."
-              tags={["User Research", "Design System", "Work"]}
+              tags={[
+                "User Research",
+                "Design System",
+                "Information Architecture",
+                "Work",
+              ]}
               image="/static/StrongYouth.png"
             />
           </div>
