@@ -18,7 +18,10 @@ export default function Header({ user }) {
 
   React.useEffect(() => {
     function KeyboardNav(e) {
-      if (e.key === "a") {
+      const tag = document.activeElement?.tagName;
+
+      if (tag === "INPUT" || tag == "TEXTAREA") return;
+      else if (e.key === "a") {
         navigate("/about");
       } else if (e.key === "w") {
         navigate("/");

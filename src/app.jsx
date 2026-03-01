@@ -7,8 +7,8 @@ import { Resume } from "./resume/resume";
 import { About } from "./about/about";
 import { Home } from "./home/home";
 import { Notfound } from "./notfound/notfound";
-import Header from "./Components/Layout/Header";
-import Footer from "./Components/Layout/footer";
+import Header from "./components/layout/header";
+import Footer from "./components/layout/footer";
 import { MessageLaucher } from "./components/ui/button-message";
 
 export default function App() {
