@@ -2,6 +2,24 @@ import React from "react";
 import noImageGraphic from "../Assets/Icons/Nophoto-graphic-SVGicon.svg";
 
 export function About() {
+  async function githubRepoLanguages(owner, repo) {
+    const res = await fetch(
+      `https://api.github.com/repos/${owner}/${repo}/languages`,
+    );
+    const data = await res.json();
+    return data;
+  }
+
+  React.useEffect(() => {
+    (async () => {
+      const languages = await githubRepoLanguages(
+        "ethantruehawkes",
+        "Portfolio3",
+      );
+      console.log(languages);
+    })();
+  }, []);
+
   return (
     <main>
       <section className="about-page">
