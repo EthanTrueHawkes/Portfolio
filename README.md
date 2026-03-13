@@ -108,12 +108,12 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Node.js/Express HTTP service** - I did not complete this part of the deliverable.
-- [ ] **Static middleware for frontend** - I did not complete this part of the deliverable.
-- [ ] **Calls to third party endpoints** - I did not complete this part of the deliverable.
-- [ ] **Backend service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Frontend calls service endpoints** - I did not complete this part of the deliverable.
-- [ ] **Supports registration, login, logout, and restricted endpoint** - I did not complete this part of the deliverable.
+- [x] **Node.js/Express HTTP service** - The backend runs with node and express http service on port 4000
+- [x] **Static middleware for frontend** - Backend has middleware that controls frontend calls to the backend.
+- [x] **Calls to third party endpoints** - The About page calls a Github API Endpoint to get the languages and bytes of each language from my startup repo.
+- [x] **Backend service endpoints** - Backend has endpoints for Auth allows users to be read / remembered & stored, and uses BCrypto hash passwords
+- [x] **Frontend calls service endpoints** - In About page frontend calls Github API, in App.jsx frontend calls all server API's related to Auth and logout, and passes functions to other pages to allow them to interact with server API's.
+- [x] **Supports registration, login, logout, and restricted endpoint** - Website supports registration, login, logout and restricted endpoints.
 
 ## 🚀 DB deliverable
 
