@@ -2,6 +2,8 @@ import React from "react";
 import noImageGraphic from "../Assets/Icons/Nophoto-graphic-SVGicon.svg";
 
 export function About() {
+  const [languages, setLanguages] = React.useState({});
+
   async function githubRepoLanguages(owner, repo) {
     const res = await fetch(
       `https://api.github.com/repos/${owner}/${repo}/languages`,
@@ -17,6 +19,7 @@ export function About() {
         "Portfolio3",
       );
       console.log(languages);
+      setLanguages(languages);
     })();
   }, []);
 
@@ -49,6 +52,13 @@ export function About() {
               I also have a side passion for coding and learning more about the
               implementation of design. See the history of my GitHub commits for
               building this website below.
+            </p>
+            <p>
+              {Object.entries(languages).map(([lang, bytes]) => (
+                <span key={lang}>
+                  {lang}: {bytes} bytes
+                </span>
+              ))}
             </p>
           </div>
 
