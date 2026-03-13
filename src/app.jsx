@@ -1,13 +1,7 @@
 import React from "react";
 import "./app.css";
 
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import { Login } from "./login/login";
 import { Resume } from "./resume/resume";
 import { About } from "./about/about";
@@ -23,20 +17,21 @@ export default function App() {
   const location = useLocation();
 
   function handleLogout() {
-    fetch("api/auth", {
+    fetch("/api/auth", {
       method: "DELETE",
     });
     navigate("/login");
   }
 
   async function createAuth(method, email, password, usernameText) {
-    const res = await fetch("api/auth", {
-      method: method,
+    const res = await fetch("/api/auth", {
+      method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password, usernameText }),
     });
     await res.json();
     if (res.ok) {
+      console.log("Authentication successful");
       navigate("/");
       setUser(usernameText);
     } else {

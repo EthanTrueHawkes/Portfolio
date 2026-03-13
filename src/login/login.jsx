@@ -9,11 +9,11 @@ export function Login({ createAuth }) {
   const [usernameText, setUsernameText] = React.useState("");
 
   function handleLogin() {
-    createAuth("PUT", email, password);
+    createAuth("PUT", email, password, usernameText);
   }
 
   function handleRegistration() {
-    createAuth("POST", email, password);
+    createAuth("POST", email, password, usernameText);
   }
   return (
     <main className="login-page">
@@ -25,7 +25,13 @@ export function Login({ createAuth }) {
           </p>
         </header>
 
-        <form method="get" action="index.html" className="login-form">
+        <form
+          className="login-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleLogin();
+          }}
+        >
           <div className="field-group">
             <div className="form-field">
               <p className="field-title">username:</p>
@@ -68,7 +74,8 @@ export function Login({ createAuth }) {
               className="button-secondary"
               id="createAccount-notImplemented"
               disabled={!(email && password)}
-              onClick={() => handleRegistration}
+              onClick={() => handleRegistration()}
+              type="button"
             >
               Create Account
             </button>
