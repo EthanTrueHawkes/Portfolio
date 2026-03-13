@@ -7,7 +7,7 @@ import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 import sendIcon from "../../Assets/Icons/Send.svg";
 import logoutIcon from "../../Assets/Icons/Logout.svg";
 
-export default function Header({ logoutUser, user }) {
+export default function Header({ handleLogout, user }) {
   const navigate = useNavigate();
   const [isMessagesOpen, setIsMessagesOpen] = React.useState(false);
   const [messages, setMessages] = React.useState([]);
@@ -100,7 +100,7 @@ export default function Header({ logoutUser, user }) {
                   className="nav-button"
                   onClick={() => {
                     setIsSettingsOpen(false);
-                    logoutUser();
+                    handleLogout();
                   }}
                 >
                   <img src={logoutIcon} alt="Logout Icon" />

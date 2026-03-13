@@ -12,9 +12,18 @@ import Footer from "./components/layout/footer";
 import { MessageLaucher } from "./components/ui/button-message";
 
 export default function App() {
-  const [user, setUser] = React.useState(localStorage.getItem("user") || null);
   const navigate = useNavigate();
   const location = useLocation();
+  const [user, setUser] = React.useState(localStorage.getItem("user") || null);
+  const [userInfo, setUserInfo] = React.useState("");
+
+  React.useEffect(() => {
+    (async () => {
+      const res = await fetch("api/user/me");
+      const data = await res.json();
+      setUserInfo(data);
+    })();
+  }, []);
 
   function handleLogout() {
     fetch("/api/auth", {
