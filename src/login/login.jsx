@@ -28,6 +28,15 @@ export function Login({ createAuth }) {
         <form method="get" action="index.html" className="login-form">
           <div className="field-group">
             <div className="form-field">
+              <p className="field-title">username:</p>
+              <input
+                type="text"
+                placeholder="username"
+                onChange={(e) => setUsernameText(e.target.value)}
+              />
+            </div>
+
+            <div className="form-field">
               <p className="field-title">email:</p>
               <input
                 type="email"
