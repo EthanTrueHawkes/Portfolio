@@ -29,15 +29,16 @@ export default function App() {
     navigate("/login");
   }
 
-  async function createAuth(method, email, password) {
+  async function createAuth(method, email, password, usernameText) {
     const res = await fetch("api/auth", {
       method: method,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, usernameText }),
     });
     await res.json();
     if (res.ok) {
       navigate("/");
+      setUser(usernameText);
     } else {
       alert("Authentication failed");
     }

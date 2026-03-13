@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export function Login({ createAuth }) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [usernameText, setUsernameText] = React.useState("");
 
   function handleLogin() {
     createAuth("PUT", email, password);
@@ -35,7 +36,7 @@ export function Login({ createAuth }) {
               />
             </div>
 
-            <div className="form-field" id="password-notImplemented">
+            <div className="form-field">
               <p className="field-title">Password:</p>
               <input
                 type="password"
