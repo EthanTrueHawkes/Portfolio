@@ -22,29 +22,38 @@ export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  function logoutUser() {
-    localStorage.removeItem("user");
-    setUser(null);
+  function handleLogout() {
+    fetch("api/auth", {
+      method: "DELETE",
+    });
     navigate("/login");
   }
 
-  function loginUser(text) {
-    localStorage.setItem("user", text);
-    setUser(text);
-    navigate("/");
+  async function createAuth(method, email, password) {
+    const res = await fetch("api/auth", {
+      method: method,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    await res.json();
+    if (res.ok) {
+      navigate("/");
+    } else {
+      alert("Authentication failed");
+    }
   }
 
   return (
     <div className="app">
       {location.pathname !== "/login" && (
-        <Header logoutUser={logoutUser} user={user} />
+        <Header handleLogout={handleLogout} user={user} />
       )}
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login loginUser={loginUser} />} />
+        <Route path="/login" element={<Login createAuth={createAuth} />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
 
