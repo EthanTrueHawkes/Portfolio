@@ -4,19 +4,22 @@ const config = require("./dbConfig.json");
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 
 const client = new MongoClient(url);
-const db = client.db("rental");
-const collection = db.collection("house");
+const db = client.db("startup");
+const userCollection = db.collection("user");
 
-async function main() {
+(async function testConnection() {
   try {
-    // Test that you can connect to the database
     await db.command({ ping: 1 });
-    console.log(`DB connected to ${config.hostname}`);
+    console.log(`Connect to database`);
   } catch (ex) {
-    console.log(`Connection failed to ${url} because ${ex.message}`);
+    console.log(
+      `Unable to connect to database with ${url} because ${ex.message}`,
+    );
     process.exit(1);
   }
+})();
 
+async function main() {
   try {
     // add all the following database code here
   } finally {
