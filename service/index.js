@@ -3,6 +3,7 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const uuid = require("uuid");
 const bcrypt = require("bcryptjs");
+const DB = require("./database.js");
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -13,7 +14,7 @@ app.post("/api/auth", async (req, res) => {
     res.status(409).send({ msg: "Existing user" });
   } else {
     const user = await createUser(req.body.email, req.body.password);
-    setAuthCookie(res, user);
+    setAuthCookie(res, user.token);
 
     res.send({ email: user.email });
   }
@@ -21,8 +22,11 @@ app.post("/api/auth", async (req, res) => {
 
 app.put("/api/auth", async (req, res) => {
   const user = await getUser("email", req.body.email);
+
   if (user && (await bcrypt.compare(req.body.password, user.password))) {
-    setAuthCookie(res, user);
+    user.token = uuid.v4();
+    await DB.updateUser(user);
+    setAuthCookie(res, user.token);
 
     res.send({ email: user.email });
   } else {
@@ -34,9 +38,9 @@ app.delete("/api/auth", async (req, res) => {
   const token = req.cookies["token"];
   const user = await getUser("token", token);
   if (user) {
-    clearAuthCookie(res, user);
+    await DB.updateUserRemoveAuth(user);
+    clearAuthCookie(res);
   }
-
   res.send({});
 });
 
@@ -50,40 +54,38 @@ app.get("/api/user/me", async (req, res) => {
   }
 });
 
-const users = [];
-
 async function createUser(email, password) {
   const passwordHash = await bcrypt.hash(password, 10);
 
   const user = {
     email: email,
     password: passwordHash,
+    token: uuid.v4(),
   };
 
-  users.push(user);
+  await DB.addUser(user);
 
   return user;
 }
 
 async function getUser(field, value) {
-  if (value) {
-    return users.find((user) => user[field] === value);
+  if (field === "email") {
+    return DB.getUser(value);
+  } else if (field === "token") {
+    return DB.getUserByToken(value);
   }
   return null;
 }
 
-function setAuthCookie(res, user) {
-  user.token = uuid.v4();
-
-  res.cookie("token", user.token, {
+function setAuthCookie(res, authToken) {
+  res.cookie("token", authToken, {
     secure: true,
     httpOnly: true,
     sameSite: "strict",
   });
 }
 
-function clearAuthCookie(res, user) {
-  delete user.token;
+function clearAuthCookie(res) {
   res.clearCookie("token");
 }
 
