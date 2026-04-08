@@ -41,9 +41,9 @@ class ChatNotifier {
       );
     };
 
-    this.socket.onmessage = async (msg) => {
+    this.socket.onmessage = (msg) => {
       try {
-        const event = JSON.parse(await msg.data.text());
+        const event = JSON.parse(msg.data);
         this.receiveEvent(event);
       } catch (err) {
         console.error("Failed to parse websocket message", err);

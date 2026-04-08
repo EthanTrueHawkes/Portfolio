@@ -163,11 +163,15 @@
   flex: 1;
 }
 
-.nav-message-user {
+.nav-message-visitor {
   display: flex;
   padding: 16px;
   background: linear-gradient(132deg, #646d46 9.49%, #414831 101.51%);
   border-radius: 8px 8px 0px 8px;
+}
+
+.nav-message-visitor p {
+  color: white;
 }
 
 .nav-message-owner {
