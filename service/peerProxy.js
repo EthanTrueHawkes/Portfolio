@@ -1,14 +1,19 @@
-const express = require("express");
 const { WebSocketServer, WebSocket } = require("ws");
 
-const app = express();
-app.use(express.static("./public"));
+function peerProxy(httpServer) {
+  // Create a websocket object
+  const socketServer = new WebSocketServer({ server: httpServer });
 
-setInterval(() => {
-  socketServer.clients.forEach(function each(client) {
-    if (client.isAlive === false) return client.terminate();
+  let ownerSocket = null;
 
-    client.isAlive = false;
-    client.ping();
-  });
-}, 10000);
+  setInterval(() => {
+    socketServer.clients.forEach(function each(client) {
+      if (client.isAlive === false) return client.terminate();
+
+      client.isAlive = false;
+      client.ping();
+    });
+  }, 10000);
+}
+
+module.exports = { peerProxy };
