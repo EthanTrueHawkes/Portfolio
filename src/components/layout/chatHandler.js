@@ -12,7 +12,63 @@ class ChatMessage {
   }
 }
 
-class ChatNotifier {}
+class ChatNotifier {
+  events = [];
+  handlers = [];
+
+  constructor() {
+    const port = window.location.port;
+    const protocol = window.location.protocol === "http:" ? "ws" : "wss";
+
+    // Use /ws only if your backend websocket server is set up for that path
+    this.socket = new WebSocket(
+      `${protocol}://${window.location.hostname}:${port}/ws`,
+    );
+
+    this.socket.onopen = () => {
+      this.receiveEvent(
+        new ChatMessage("system", "system", ChatEvent.System, {
+          msg: "connected",
+        }),
+      );
+    };
+
+    this.socket.onclose = () => {
+      this.receiveEvent(
+        new ChatMessage("system", "system", ChatEvent.System, {
+          msg: "disconnected",
+        }),
+      );
+    };
+
+    this.socket.onmessage = async (msg) => {
+      try {
+        const event = JSON.parse(await msg.data.text());
+        this.receiveEvent(event);
+      } catch (err) {
+        console.error("Failed to parse websocket message", err);
+      }
+    };
+  }
+
+  broadcastEvent(from, role, value) {
+    const event = new ChatMessage(from, role, ChatEvent.Message, value);
+    this.socket.send(JSON.stringify(event));
+  }
+
+  addHandler(handler) {
+    this.handlers.push(handler);
+  }
+
+  removeHandler(handler) {
+    this.handlers = this.handlers.filter((h) => h !== handler);
+  }
+
+  receiveEvent(event) {
+    this.events.push(event);
+    this.handlers.forEach((handler) => handler(event));
+  }
+}
 
 const chatNotifier = new ChatNotifier();
 export { chatNotifier, ChatEvent, ChatMessage };
