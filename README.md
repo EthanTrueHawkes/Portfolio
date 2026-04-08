@@ -120,14 +120,14 @@ For this deliverable I did the following. I checked the box `[x]` and added a de
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
 - [ ] **Stores data in MongoDB** - I did not complete this part of the deliverable.
-- [ ] **Stores credentials in MongoDB** - I did not complete this part of the deliverable.
+- [x] **Stores credentials in MongoDB** - User credentials are stored in mongoDB
 
 ## 🚀 WebSocket deliverable
 
 For this deliverable I did the following. I checked the box `[x]` and added a description for things I completed.
 
-- [ ] **Backend listens for WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Frontend makes WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **Data sent over WebSocket connection** - I did not complete this part of the deliverable.
-- [ ] **WebSocket data displayed** - I did not complete this part of the deliverable.
-- [ ] **Application is fully functional** - I did not complete this part of the deliverable.
+- [x] **Backend listens for WebSocket connection** - Backend listens for websocket upgrade request and handles it, and also takes care of messaging, and user roles and other items needed.
+- [x] **Frontend makes WebSocket connection** - The front end requests a websocket upgrade and also handles messages being shown in UI. Currently if a user logs in with "ethawkes2@gmail.com" they get the "owner" designation and their messages pop up on the left. Other messages go to the right, as this is meant to message me.
+- [x] **Data sent over WebSocket connection** - Data successfully is transmitted between the multiple websocket connecitons like a chatroom.
+- [x] **WebSocket data displayed** - The front end successfully displays data from other socket connections as well as their own.
+- [x] **Application is fully functional** - Partially. Application still has many areas that are not finished, but items such as loging in and out, switching web pages, backend API calls, and chat room are operational / functional.
