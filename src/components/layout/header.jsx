@@ -6,6 +6,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 import sendIcon from "../../Assets/Icons/Send.svg";
 import logoutIcon from "../../Assets/Icons/Logout.svg";
+import { chatNotifier, ChatEvent } from "./chatNotifier";
 
 export default function Header({ handleLogout, user }) {
   const navigate = useNavigate();
@@ -23,15 +24,29 @@ export default function Header({ handleLogout, user }) {
   }
 
   React.useEffect(() => {
-    if (!isMessagesOpen) return;
+    function handleEvent(event) {
+      setMessages((prev) => [...prev, event]);
+    }
 
-    const timer = setTimeout(() => {
-      setMessages(
-        "Hello, thanks for visiting my portfolio. Feel free to reach out!",
-      );
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [isMessagesOpen]);
+    chatNotifier.addHandler(handleEvent);
+
+    return () => {
+      chatNotifier.removeHandler(handleEvent);
+    };
+  }, []);
+
+  function sendMessage(e) {
+    e.preventDefault();
+
+    const role = user === "owner" ? "owner" : "visitor";
+    const from = user || "Guest";
+
+    chatNotifier.broadcastEvent(from, role, {
+      msg: messageInput,
+    });
+
+    setMessageInput("");
+  }
 
   React.useEffect(() => {
     function KeyboardNav(e) {
@@ -129,13 +144,15 @@ export default function Header({ handleLogout, user }) {
                     </div>
                   )}
                 </div>
-                <form>
+                <form onSubmit={sendMessage}>
                   <input
                     type="text"
                     placeholder="Enter message..."
                     className="nav-message-dropdown-input"
+                    value={messageInput}
+                    onChange={(e) => setMessageInput(e.target.value)}
                   />
-                  <button className="nav-message-dropdown-send">
+                  <button type="submit" className="nav-message-dropdown-send">
                     <img src={sendIcon} alt="Send Message" />
                   </button>
                 </form>
