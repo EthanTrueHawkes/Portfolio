@@ -16,12 +16,22 @@ export default function App() {
   const location = useLocation();
   const [user, setUser] = React.useState(localStorage.getItem("user") || null);
   const [userInfo, setUserInfo] = React.useState("");
+  const [role, setRole] = React.useState(
+    localStorage.getItem("role") || "visitor",
+  );
 
   React.useEffect(() => {
     (async () => {
-      const res = await fetch("api/user/me");
+      const res = await fetch("/api/user/me");
+
+      if (!res.ok) return;
+
       const data = await res.json();
       setUserInfo(data);
+      setUser(data.email);
+      setRole(data.role || "visitor");
+      localStorage.setItem("user", data.email);
+      localStorage.setItem("role", data.role || "visitor");
     })();
   }, []);
 
@@ -29,6 +39,12 @@ export default function App() {
     fetch("/api/auth", {
       method: "DELETE",
     });
+
+    localStorage.removeItem("user");
+    localStorage.removeItem("role");
+    setUser(null);
+    setRole("visitor");
+
     navigate("/login");
   }
 
@@ -38,20 +54,28 @@ export default function App() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password, usernameText }),
     });
-    await res.json();
+
+    const data = await res.json();
+
     if (res.ok) {
       console.log("Authentication successful");
+
+      setUser(data.email);
+      setRole(data.role || "visitor");
+
+      localStorage.setItem("user", data.email);
+      localStorage.setItem("role", data.role || "visitor");
+
       navigate("/");
-      setUser(usernameText);
     } else {
-      alert("Authentication failed");
+      alert(data.msg || "Authentication failed");
     }
   }
 
   return (
     <div className="app">
       {location.pathname !== "/login" && (
-        <Header handleLogout={handleLogout} user={user} />
+        <Header handleLogout={handleLogout} user={user} role={role} />
       )}
 
       <Routes>

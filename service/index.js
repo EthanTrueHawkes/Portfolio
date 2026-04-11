@@ -4,10 +4,16 @@ const cookieParser = require("cookie-parser");
 const uuid = require("uuid");
 const bcrypt = require("bcryptjs");
 const DB = require("./database.js");
+const { peerProxy } = require("./peerProxy.js");
+const OWNER_EMAIL = "ethawkes2@gmail.com";
 
 app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
+
+function getUserRole(user) {
+  return user.email === OWNER_EMAIL ? "owner" : "visitor";
+}
 
 app.post("/api/auth", async (req, res) => {
   if (await getUser("email", req.body.email)) {
@@ -16,7 +22,7 @@ app.post("/api/auth", async (req, res) => {
     const user = await createUser(req.body.email, req.body.password);
     setAuthCookie(res, user.token);
 
-    res.send({ email: user.email });
+    res.send({ email: user.email, role: getUserRole(user) });
   }
 });
 
@@ -28,7 +34,7 @@ app.put("/api/auth", async (req, res) => {
     await DB.updateUser(user);
     setAuthCookie(res, user.token);
 
-    res.send({ email: user.email });
+    res.send({ email: user.email, role: getUserRole(user) });
   } else {
     res.status(401).send({ msg: "Unauthorized" });
   }
@@ -48,7 +54,7 @@ app.get("/api/user/me", async (req, res) => {
   const token = req.cookies["token"];
   const user = await getUser("token", token);
   if (user) {
-    res.send({ email: user.email });
+    res.send({ email: user.email, role: getUserRole(user) });
   } else {
     res.status(401).send({ msg: "Unauthorized" });
   }
@@ -77,9 +83,11 @@ async function getUser(field, value) {
   return null;
 }
 
-function setAuthCookie(res, authToken) {
-  res.cookie("token", authToken, {
-    secure: true,
+function setAuthCookie(res, user) {
+  user.token = uuid.v4();
+
+  res.cookie("token", user.token, {
+    secure: process.env.NODE_ENV === "production",
     httpOnly: true,
     sameSite: "strict",
   });
@@ -90,6 +98,8 @@ function clearAuthCookie(res) {
 }
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
-app.listen(port, function () {
+const httpService = app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);

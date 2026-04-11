@@ -6,11 +6,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import profileIcon from "../../Assets/Icons/Login-person-SVGicon.svg";
 import sendIcon from "../../Assets/Icons/Send.svg";
 import logoutIcon from "../../Assets/Icons/Logout.svg";
+import { chatNotifier, ChatEvent } from "./chatHandler";
 
-export default function Header({ handleLogout, user }) {
+export default function Header({ handleLogout, user, role }) {
   const navigate = useNavigate();
   const [isMessagesOpen, setIsMessagesOpen] = React.useState(false);
   const [messages, setMessages] = React.useState([]);
+  const [messageInput, setMessageInput] = React.useState("");
 
   const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
 
@@ -23,15 +25,40 @@ export default function Header({ handleLogout, user }) {
   }
 
   React.useEffect(() => {
-    if (!isMessagesOpen) return;
+    function handleEvent(event) {
+      setMessages((prev) => [...prev, event]);
+    }
 
-    const timer = setTimeout(() => {
-      setMessages(
-        "Hello, thanks for visiting my portfolio. Feel free to reach out!",
-      );
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [isMessagesOpen]);
+    chatNotifier.addHandler(handleEvent);
+
+    return () => {
+      chatNotifier.removeHandler(handleEvent);
+    };
+  }, []);
+
+  function sendMessage(e) {
+    e.preventDefault();
+
+    if (!messageInput.trim()) return;
+
+    const messageRole = role || "visitor";
+    const from = user || "Guest";
+
+    const event = {
+      from,
+      role: messageRole,
+      type: ChatEvent.Message,
+      value: { msg: messageInput },
+    };
+
+    setMessages((prev) => [...prev, event]);
+
+    chatNotifier.broadcastEvent(from, messageRole, {
+      msg: messageInput,
+    });
+
+    setMessageInput("");
+  }
 
   React.useEffect(() => {
     function KeyboardNav(e) {
@@ -123,19 +150,40 @@ export default function Header({ handleLogout, user }) {
             <>
               <div className="nav-message-dropdown-container">
                 <div className="nav-message-dropdown-chat">
-                  {messages.length > 0 && (
-                    <div className="nav-message-owner">
-                      <p>{messages}</p>
-                    </div>
-                  )}
+                  {messages.map((event, index) => {
+                    const text = event.value?.msg || "";
+
+                    if (event.type === ChatEvent.System) {
+                      return (
+                        <div key={index} className="nav-message-system">
+                          <p>{text}</p>
+                        </div>
+                      );
+                    }
+
+                    return (
+                      <div
+                        key={index}
+                        className={
+                          event.role === "owner"
+                            ? "nav-message-owner"
+                            : "nav-message-visitor"
+                        }
+                      >
+                        <p>{text}</p>
+                      </div>
+                    );
+                  })}
                 </div>
-                <form>
+                <form onSubmit={sendMessage}>
                   <input
                     type="text"
                     placeholder="Enter message..."
                     className="nav-message-dropdown-input"
+                    value={messageInput}
+                    onChange={(e) => setMessageInput(e.target.value)}
                   />
-                  <button className="nav-message-dropdown-send">
+                  <button type="submit" className="nav-message-dropdown-send">
                     <img src={sendIcon} alt="Send Message" />
                   </button>
                 </form>
