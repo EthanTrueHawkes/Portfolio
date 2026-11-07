@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ethan True Hawkes, product designer. Selected case studies in returns and engineering software.">
+  <meta name="theme-color" content="#fbfbfd">
+  <title>Ethan True Hawkes — Product Designer</title>
+  <link rel="preload" href="assets/plex-mono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="portfolio.js" defer></script>
+</head>
+<body>
+  <nav class="navigation" aria-label="Portfolio">
+    <a class="navigation__work" href="#work">Work</a>
+    <a id="resume" href="documents/ethan-hawke-resume.pdf" target="_blank" rel="noopener" aria-keyshortcuts="R" aria-label="Resume (PDF, opens in a new tab)">Resume <kbd aria-hidden="true">R</kbd></a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <h1 class="hero__title">
+        <span class="visually-hidden">I'm Ethan True Hawkes</span>
+        <img src="assets/im-ethan.svg" alt="" width="648" height="96">
+        <img src="assets/true-hawkes.svg" alt="" width="864" height="96">
+      </h1>
+      <div class="hero__intro">
+        <p>Product designer with a love for:</p>
+        <p class="hero__interests">
+          <span><em><img src="assets/systems.svg" alt="" width="20" height="20">design systems</em>,</span>
+          <span><em><img src="assets/interactions.svg" alt="" width="20" height="20">interactions</em><span class="hero__and">, and</span></span>
+          <span><em><img src="assets/simplicity.svg" alt="" width="20" height="20">simplicity</em>.</span>
+        </p>
+      </div>
+      <a class="hero__work" href="#work">
+        <span class="down-arrows" aria-hidden="true"><img src="assets/arrow-down.svg" alt="" width="20" height="20"><img src="assets/arrow-down.svg" alt="" width="20" height="20"></span>
+        Recent work
+        <span class="down-arrows" aria-hidden="true"><img src="assets/arrow-down.svg" alt="" width="20" height="20"><img src="assets/arrow-down.svg" alt="" width="20" height="20"></span>
+      </a>
+    </header>
+
+    <section class="work page-width" id="work" aria-label="Recent work" tabindex="-1">
+      <a class="case-study case-study--resolve" href="documents/resolve-returns.pdf" target="_blank" rel="noopener" aria-labelledby="resolve-title pdf-note" aria-describedby="resolve-description">
+        <div class="case-study__surface">
+          <div class="case-study__copy">
+            <h2 id="resolve-title">Resolve Returns</h2>
+            <p class="case-study__number">Case Study <span aria-hidden="true"></span> 01</p>
+            <p id="resolve-description">Conceptual return portal built around reducing both user friction and business costs for returns through AI.</p>
+          </div>
+          <img class="case-study__arrow" src="assets/arrow-right.svg" alt="" width="32" height="32">
+          <div class="resolve-artwork" aria-hidden="true">
+            <div class="resolve-artwork__caption"><span>Spotlight</span></div>
+            <div class="phone phone--order">
+              <div class="phone__screen"><img src="assets/resolve-order.png" alt=""></div>
+              <img class="phone__frame" src="assets/iphone-frame.png" alt="">
+            </div>
+            <div class="phone phone--exchange">
+              <div class="phone__screen"><img src="assets/resolve-exchange.png" alt=""></div>
+              <img class="phone__frame" src="assets/iphone-frame.png" alt="">
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a class="case-study case-study--engineering" href="documents/engineering-software.pdf" target="_blank" rel="noopener" aria-labelledby="engineering-title pdf-note" aria-describedby="engineering-description">
+        <div class="case-study__surface">
+          <div class="case-study__copy">
+            <h2 id="engineering-title">Simplifying Engineering Tools</h2>
+            <p class="case-study__number">Case Study <span aria-hidden="true"></span> 02</p>
+            <p id="engineering-description">Led research and Presented research and initial ideation on engineering (FEA) software in Montreal, CAN at HCII 2026.</p>
+          </div>
+          <img class="case-study__arrow" src="assets/chevrons.svg" alt="" width="32" height="32">
+          <div class="engineering-artwork">
+            <img src="assets/engineering-photo.png" alt="Ethan presenting his engineering software research at HCI International 2026." width="1024" height="768" loading="lazy">
+          </div>
+        </div>
+      </a>
+      <span class="visually-hidden" id="pdf-note">(PDF, opens in a new tab)</span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__pattern" aria-hidden="true"></div>
+    <div class="footer__card page-width">
+      <div class="footer__surface">
+        <section class="footer__group" aria-labelledby="projects">
+          <h2 id="projects">Projects</h2>
+          <ul>
+            <li><a href="documents/resolve-returns.pdf" target="_blank" rel="noopener" aria-describedby="pdf-note">Resolve Returns</a></li>
+            <li><a href="documents/engineering-software.pdf" target="_blank" rel="noopener" aria-describedby="pdf-note">Engineering Software</a></li>
+          </ul>
+        </section>
+        <section class="footer__group" aria-labelledby="connect">
+          <h2 id="connect">Connect</h2>
+          <ul>
+            <li>Email</li>
+            <li>Linkedin</li>
+            <li>Github</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
