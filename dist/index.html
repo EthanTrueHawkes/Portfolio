@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#fbfbfd">
   <title>Ethan True Hawkes — Product Designer</title>
   <link rel="preload" href="assets/plex-mono.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css?v=card-fade">
+  <link rel="stylesheet" href="styles.css?v=case-study-arrow-left">
   <script src="portfolio.js?v=card-fade" defer></script>
 </head>
 <body>
@@ -45,7 +45,11 @@
             <p class="case-study__number">Case Study <span aria-hidden="true"></span> 01</p>
             <p id="resolve-description">Conceptual return portal built around reducing both user friction and business costs for returns through AI.</p>
           </div>
-          <img class="case-study__arrow" src="assets/arrow-right.svg" alt="" width="32" height="32">
+          <svg class="case-study__arrow" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path class="case-study__arrow-line" d="M24 16H8"/>
+            <path class="case-study__arrow-leading" d="M8 22.6667L14.6667 16L8 9.3333"/>
+            <path d="M17.3333 22.6667L24 16L17.3333 9.3333"/>
+          </svg>
           <div class="resolve-artwork" aria-hidden="true">
             <div class="resolve-artwork__caption"><span>Spotlight</span></div>
             <div class="phone phone--order">
@@ -67,7 +71,11 @@
             <p class="case-study__number">Case Study <span aria-hidden="true"></span> 02</p>
             <p id="engineering-description">Led research and Presented research and initial ideation on engineering (FEA) software in Montreal, CAN at HCII 2026.</p>
           </div>
-          <img class="case-study__arrow" src="assets/chevrons.svg" alt="" width="32" height="32">
+          <svg class="case-study__arrow" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path class="case-study__arrow-line" d="M24 16H8"/>
+            <path class="case-study__arrow-leading" d="M8 22.6667L14.6667 16L8 9.3333"/>
+            <path d="M17.3333 22.6667L24 16L17.3333 9.3333"/>
+          </svg>
           <div class="engineering-artwork">
             <img src="assets/engineering-photo.png" alt="Ethan presenting his engineering software research at HCI International 2026." width="1024" height="768" loading="lazy">
           </div>
@@ -81,7 +89,11 @@
               <p class="case-study__number">Case Study <span aria-hidden="true"></span> 03</p>
               <p id="youth-description">Continued app redesign and admin portal creation with tokens and components.</p>
             </div>
-            <img class="case-study__arrow" src="assets/compact-chevrons.svg" alt="" width="32" height="32">
+            <svg class="case-study__arrow" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path class="case-study__arrow-line" d="M24 16H8"/>
+              <path class="case-study__arrow-leading" d="M8 22.6667L14.6667 16L8 9.3333"/>
+              <path d="M17.3333 22.6667L24 16L17.3333 9.3333"/>
+            </svg>
             <div class="youth-laptop" aria-hidden="true">
               <div class="youth-laptop__screen">
                 <img src="assets/strong-youth-admin.png" alt="" width="2880" height="2048" loading="lazy">
@@ -100,7 +112,11 @@
               <p class="case-study__number">Case Study <span aria-hidden="true"></span> 04</p>
               <p id="mckay-description">Pitched and led the creation of a design system reducing project turnaround time by 56%.</p>
             </div>
-            <img class="case-study__arrow" src="assets/compact-chevrons.svg" alt="" width="32" height="32">
+            <svg class="case-study__arrow" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path class="case-study__arrow-line" d="M24 16H8"/>
+              <path class="case-study__arrow-leading" d="M8 22.6667L14.6667 16L8 9.3333"/>
+              <path d="M17.3333 22.6667L24 16L17.3333 9.3333"/>
+            </svg>
             <img class="mckay-artwork" src="assets/mckay-design-system.png" alt="" width="2003" height="2151" loading="lazy">
           </div>
         </a>
@@ -113,21 +129,24 @@
     <div class="footer__pattern" aria-hidden="true"></div>
     <div class="footer__card page-width">
       <div class="footer__surface">
-        <section class="footer__group" aria-labelledby="projects">
-          <h2 id="projects">Projects</h2>
-          <ul>
-            <li><a href="documents/resolve-returns.pdf" target="_blank" rel="noopener" aria-describedby="pdf-note">Resolve Returns</a></li>
-            <li><a href="documents/engineering-software.pdf" target="_blank" rel="noopener" aria-describedby="pdf-note">Engineering Software</a></li>
-          </ul>
-        </section>
-        <section class="footer__group" aria-labelledby="connect">
-          <h2 id="connect">Connect</h2>
-          <ul>
-            <li>Email</li>
-            <li>Linkedin</li>
-            <li>Github</li>
-          </ul>
-        </section>
+        <div class="footer__groups">
+          <section class="footer__group" aria-labelledby="projects">
+            <h2 id="projects">Projects</h2>
+            <ul>
+              <li><a href="documents/resolve-returns.pdf" target="_blank" rel="noopener" aria-describedby="pdf-note">Resolve</a></li>
+              <li><a href="documents/engineering-software.pdf" target="_blank" rel="noopener" aria-describedby="pdf-note">Engineering Tool</a></li>
+              <li><a href="documents/strong-youth.pdf" target="_blank" rel="noopener" aria-describedby="pdf-note">Strong Youth Project</a></li>
+            </ul>
+          </section>
+          <section class="footer__group" aria-labelledby="connect">
+            <h2 id="connect">Connect</h2>
+            <ul>
+              <li><a href="mailto:ethawkes2@gmail.com">Email</a></li>
+              <li><a href="https://www.linkedin.com/in/ethan-hawkes-4356a5341">Linkedin</a></li>
+            </ul>
+          </section>
+        </div>
+        <p class="footer__thanks">Thank you.</p>
       </div>
     </div>
   </footer>
