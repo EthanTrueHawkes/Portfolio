@@ -176,6 +176,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 .work__pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; }
 
 .case-study {
+  position: relative;
   display: block;
   border-radius: 40px;
   padding: 8px;
@@ -184,15 +185,33 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
   transition: transform 320ms var(--ease), box-shadow 320ms var(--ease);
 }
 
-.case-study--resolve {
+.case-study::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 8px;
+  border-radius: inherit;
   background: linear-gradient(rgb(46 130 32 / 85%), rgb(20 71 8 / 85%));
-  box-shadow: var(--card-shadow);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.case-study.is-pointer-over::before {
+  visibility: visible;
+  animation: reveal-card-frame 200ms ease-out;
+}
+
+@keyframes reveal-card-frame {
+  from { clip-path: circle(0 at var(--entry-x) var(--entry-y)); }
+  to { clip-path: circle(var(--reveal-radius) at var(--entry-x) var(--entry-y)); }
 }
 
 .case-study:hover, .case-study:focus-visible {
-  transform: translateY(-4px);
   box-shadow: 0 4px 9px rgb(0 0 0 / 5%), 0 12px 28px rgb(0 0 37 / 12%), 0 36px 90px rgb(0 0 37 / 18%);
 }
+.case-study:focus-visible { transform: translateY(-4px); }
 .case-study:active { transform: translateY(-1px) scale(.998); }
 
 .case-study__surface {
@@ -208,7 +227,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
   background: linear-gradient(transparent 88.088%, rgb(7 7 9 / 10%)), var(--surface);
 }
 
-.case-study:not(.case-study--resolve) .case-study__surface::after {
+.case-study__surface::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -461,7 +480,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
-  .case-study:hover, .case-study:focus-visible, .case-study:active { transform: none; }
+  .case-study:focus-visible, .case-study:active { transform: none; }
+  .case-study.is-pointer-over::before { animation: none; }
   .case-study:hover .case-study__arrow, .case-study:focus-visible .case-study__arrow { translate: none; }
   .navigation a:active { scale: 1; }
 }
