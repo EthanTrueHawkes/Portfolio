@@ -47,7 +47,7 @@
   --surface: #fafafd;
   --ink: #070709;
   --secondary: #54545d;
-  --muted: #797984;
+  --muted: #71717d;
   --accent: #196a07;
   --accent-ink: #082303;
   --rim: linear-gradient(#ececf1, #e0e0e6);
@@ -530,6 +530,20 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
   .hero__education p { transform: translateY(-7px); }
   .hero__intro { margin-top: 33px; gap: 10px; }
   .case-study__copy { gap: 12px; padding-top: 25px; }
+}
+
+@container (width < 850px) {
+  .resolve-artwork__caption { padding-inline: clamp(16px, 4cqi, 36px); }
+
+  .resolve-artwork__caption span {
+    position: relative;
+    z-index: 1;
+    width: auto;
+    height: 32px;
+    padding-inline: 10px;
+    background: #a3bf9d;
+    font-size: 14px;
+  }
 }
 
 @container (width < 522px) {
