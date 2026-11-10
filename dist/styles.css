@@ -270,7 +270,15 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
   font: 20px/1.33 var(--sans);
 }
 
-.case-study--engineering .case-study__copy { width: min(505px, calc(100% - 110px)); }
+.case-study--resolve .case-study__copy {
+  /* The rotated phone frames extend above the artwork row. */
+  padding-bottom: calc(16px + 19 * var(--artwork-unit));
+}
+
+.case-study--engineering .case-study__copy {
+  width: min(505px, calc(100% - 110px));
+  padding-bottom: 16px;
+}
 .case-study:not(.case-study--resolve) .case-study__copy > p:last-child { color: #141414; }
 
 .case-study__copy h2 {
@@ -371,16 +379,22 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 
 .engineering-artwork {
   position: relative;
+  container-type: size;
   margin-inline: calc(32 * var(--artwork-unit));
-  height: calc(537 * var(--artwork-unit));
-  border-radius: calc(40 * var(--artwork-unit));
+  border-radius: calc(40 * var(--artwork-unit)) calc(40 * var(--artwork-unit)) 0 0;
   overflow: hidden;
 }
 
 .engineering-artwork img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* Match the Figma photo layer's displayed proportions at every size. */
+  --photo-ratio: calc(1040 / 537);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: max(100%, calc(100cqh * var(--photo-ratio)));
+  height: auto;
+  aspect-ratio: var(--photo-ratio);
+  translate: -50% 0;
 }
 
 .engineering-artwork::after {
@@ -538,9 +552,39 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
   .case-study__arrow { top: var(--card-inset); right: var(--card-inset); }
 }
 
+/* The 1120px cards start narrowing below 1259px with the fluid gutters. */
+@media (max-width: 1258px) {
+  .hero { font-size: 20px; line-height: 1.25; }
+
+  .hero__education, .hero__intro { max-width: calc(100% - 2 * var(--gutter)); }
+
+  .hero__education, .hero__interests {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .hero__education { gap: 16px 32px; line-height: inherit; }
+  .hero__education p { transform: none; }
+  .hero__interests { gap: 8px 12px; }
+  .hero__interests img { width: 16px; height: 16px; }
+}
+
+@media (max-width: 768px) {
+  .hero { font-size: 16px; }
+}
+
 @media (max-width: 650px) {
-  .work__pair { grid-template-columns: minmax(0, 1fr); }
-  .work__pair .case-study { width: min(100%, 538px); justify-self: center; }
+  .work { grid-auto-rows: 1fr; }
+  .work__pair { display: contents; }
+
+  .case-study__surface {
+    min-height: 100cqi;
+    grid-template-rows: minmax(calc(var(--artwork-top) * var(--artwork-unit)), auto) minmax(40cqi, 1fr);
+  }
+
+  .resolve-artwork .phone {
+    top: max(calc(309.53 * var(--artwork-unit)), calc(100% - 285 * var(--artwork-unit)));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
