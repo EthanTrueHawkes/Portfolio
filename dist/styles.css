@@ -184,7 +184,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 
 .case-study {
   position: relative;
-  display: block;
+  display: grid;
+  container-type: inline-size;
   border-radius: 40px;
   padding: 8px;
   background: var(--rim);
@@ -218,12 +219,30 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 .case-study:active { transform: translateY(-1px) scale(.998); }
 
 .case-study__surface {
+  --design-width: 1104;
+  --artwork-top: 208;
+  --artwork-height: 472;
+  /* Scale the artwork from its desktop dimensions as the card narrows. */
+  --artwork-unit: min(1px, calc(100cqi / var(--design-width)));
   position: relative;
-  height: 680px;
+  display: grid;
+  grid-template-rows: minmax(calc(var(--artwork-top) * var(--artwork-unit)), auto)
+    calc(var(--artwork-height) * var(--artwork-unit));
   overflow: hidden;
   isolation: isolate;
   border-radius: 32px;
   background: var(--surface);
+}
+
+.case-study--engineering .case-study__surface {
+  --artwork-top: 189;
+  --artwork-height: 491;
+}
+
+.case-study--compact .case-study__surface {
+  --design-width: 522;
+  --artwork-top: 178;
+  --artwork-height: 344;
 }
 
 .case-study:not(.case-study--resolve) .case-study__surface {
@@ -243,9 +262,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
   position: relative;
   z-index: 1;
   display: grid;
+  align-self: start;
   gap: 20px;
   width: min(534px, calc(100% - 110px));
-  padding-top: 32px;
+  padding-block: 32px 8px;
   margin-left: 32px;
   font: 20px/1.33 var(--sans);
 }
@@ -293,7 +313,8 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 .case-study:is(.is-pointer-over, :focus-visible) .case-study__arrow-leading { transform: translateX(9.3333px); }
 .case-study:is(.is-pointer-over, :focus-visible) .case-study__arrow-line { transform: scaleX(1); }
 
-.resolve-artwork { position: absolute; inset: 208px -4px 0; }
+.resolve-artwork, .youth-artwork, .mckay-artwork { position: relative; }
+.resolve-artwork { margin-inline: -4px; }
 .resolve-artwork__caption {
   position: absolute;
   inset: auto 0 0;
@@ -318,50 +339,48 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 
 .phone {
   position: absolute;
-  top: 309.53px;
-  width: 306.867px;
-  height: 620.055px;
+  top: calc(309.53 * var(--artwork-unit));
+  width: calc(306.867 * var(--artwork-unit));
+  height: calc(620.055 * var(--artwork-unit));
   translate: -50% -50%;
   filter: drop-shadow(165.518px 33.104px 82.759px rgb(9 20 50 / 15%));
 }
-.phone--order { left: calc(50% - 142.01px); rotate: -7.88deg; }
-.phone--exchange { left: calc(50% + 144.73px); rotate: 7.33deg; }
-.phone__frame { position: absolute; inset: 0; width: 100%; height: 100%; }
+.phone--order { left: calc(50% - 142.01 * var(--artwork-unit)); rotate: -7.88deg; }
+.phone--exchange { left: calc(50% + 144.73 * var(--artwork-unit)); rotate: 7.33deg; }
+.phone__frame { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .phone__screen {
   position: absolute;
-  left: calc(50% - .43px);
-  top: calc(50% - .7px);
+  left: calc(50% - .43 * var(--artwork-unit));
+  top: calc(50% - .7 * var(--artwork-unit));
   translate: -50% -50%;
-  width: 274.594px;
-  height: 594.587px;
-  border-radius: 14.877px;
+  width: calc(274.594 * var(--artwork-unit));
+  height: calc(594.587 * var(--artwork-unit));
+  border-radius: calc(14.877 * var(--artwork-unit));
   overflow: hidden;
 }
 
 .phone__screen img {
   position: absolute;
   left: 50%;
-  top: .5px;
-  translate: calc(-50% - .66px) 0;
-  width: 273.863px;
-  height: 593.005px;
+  top: calc(.5 * var(--artwork-unit));
+  translate: calc(-50% - .66 * var(--artwork-unit)) 0;
+  width: calc(273.863 * var(--artwork-unit));
+  height: auto;
   object-fit: cover;
 }
 
-.phone--exchange .phone__screen img { height: 765.865px; }
-
 .engineering-artwork {
-  position: absolute;
-  inset: 189px 32px auto;
-  height: 537px;
-  border-radius: 40px;
+  position: relative;
+  margin-inline: calc(32 * var(--artwork-unit));
+  height: calc(537 * var(--artwork-unit));
+  border-radius: calc(40 * var(--artwork-unit));
   overflow: hidden;
 }
 
-/* Figma's export already includes the image-fill crop. */
 .engineering-artwork img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .engineering-artwork::after {
@@ -371,40 +390,38 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
   background: linear-gradient(transparent 75.481%, rgb(0 0 0 / 20%));
 }
 
-.case-study--compact .case-study__surface { height: 522px; }
 .case-study--compact .case-study__copy { width: min(434px, calc(100% - 64px)); }
 .case-study--compact h2 { padding-right: 44px; }
 .case-study--youth .case-study__copy { width: min(426px, calc(100% - 64px)); }
 
 .phone--youth {
-  top: 340.15px;
+  top: calc(162.15 * var(--artwork-unit));
   left: 33.48%;
-  width: 159.508px;
-  height: 322.3px;
+  width: calc(159.508 * var(--artwork-unit));
+  height: calc(322.3 * var(--artwork-unit));
   filter: drop-shadow(86.035px 17.207px 43.017px rgb(9 20 50 / 15%));
 }
 
 .phone--youth .phone__screen {
-  left: calc(50% + .25px);
-  top: calc(50% - .5px);
-  width: 142.732px;
-  height: 309.062px;
-  border-radius: 4.02px;
+  left: calc(50% + .25 * var(--artwork-unit));
+  top: calc(50% - .5 * var(--artwork-unit));
+  width: calc(142.732 * var(--artwork-unit));
+  height: calc(309.062 * var(--artwork-unit));
+  border-radius: calc(4.02 * var(--artwork-unit));
 }
 
 .phone--youth .phone__screen img {
-  width: 142.352px;
-  height: 308.24px;
-  translate: calc(-50% - .56px) 0;
-  top: .88px;
+  width: calc(142.352 * var(--artwork-unit));
+  translate: calc(-50% - .56 * var(--artwork-unit)) 0;
+  top: calc(.88 * var(--artwork-unit));
 }
 
 .youth-laptop {
   position: absolute;
-  top: 230px;
+  top: calc(52 * var(--artwork-unit));
   left: 56.54%;
-  width: 467.304px;
-  height: 317.263px;
+  width: calc(467.304 * var(--artwork-unit));
+  height: calc(317.263 * var(--artwork-unit));
   border: .849px solid #4a5568;
   border-radius: 11.89px 11.89px 1.699px 1.699px;
   background: #1a202c;
@@ -413,31 +430,30 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 .youth-laptop::before {
   content: "";
   position: absolute;
-  inset: 2px 2px auto;
-  height: 302.373px;
+  inset: calc(2 * var(--artwork-unit));
+  bottom: auto;
+  height: calc(302.373 * var(--artwork-unit));
   border-radius: 9.342px 9.342px 0 0;
   background: #000;
 }
 
 .youth-laptop__screen {
   position: absolute;
-  top: 16.9px;
-  left: 11.18px;
-  width: 440.961px;
-  height: 274.885px;
+  top: calc(16.9 * var(--artwork-unit));
+  left: calc(11.18 * var(--artwork-unit));
+  width: calc(440.961 * var(--artwork-unit));
+  height: calc(274.885 * var(--artwork-unit));
   overflow: hidden;
   background: #fff;
 }
 
-.youth-laptop__screen img { width: 100%; height: 114.07%; }
+.youth-laptop__screen img { width: 100%; height: auto; }
 
-.mckay-artwork {
+.mckay-artwork img {
   position: absolute;
-  top: 178px;
   left: 16.09%;
-  width: 504.5px;
-  height: 541.777px;
-  object-fit: cover;
+  width: calc(504.5 * var(--artwork-unit));
+  height: auto;
 }
 
 .footer {
@@ -500,6 +516,31 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
   .hero__education p { transform: translateY(-7px); }
   .hero__intro { margin-top: 33px; gap: 10px; }
   .case-study__copy { gap: 12px; padding-top: 25px; }
+}
+
+@container (width < 522px) {
+  .case-study__surface { --card-inset: clamp(16px, 6.2cqi, 32px); }
+
+  .case-study .case-study__copy {
+    width: calc(100% - 2 * var(--card-inset));
+    margin-left: var(--card-inset);
+    padding-top: var(--card-inset);
+    gap: clamp(10px, 3cqi, 20px);
+    font-size: clamp(16px, 4.5cqi, 20px);
+  }
+
+  .case-study__copy h2 {
+    padding-right: 28px;
+    font-size: clamp(18px, 5.3cqi, 24px);
+    overflow-wrap: anywhere;
+  }
+
+  .case-study__arrow { top: var(--card-inset); right: var(--card-inset); }
+}
+
+@media (max-width: 650px) {
+  .work__pair { grid-template-columns: minmax(0, 1fr); }
+  .work__pair .case-study { width: min(100%, 538px); justify-self: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
