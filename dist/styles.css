@@ -208,7 +208,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 
 .case-study.is-pointer-over::before {
   opacity: 1;
-  transition-duration: 200ms;
+  transition-duration: 300ms;
 }
 
 .case-study.is-pointer-over, .case-study:focus-visible {
